@@ -165,8 +165,8 @@ public class RMCBean {
         return "RMCBean{" +
                 "time='" + time + '\'' +
                 ", status='" + status + '\'' +
-                ", Latitude='" + Latitude + '\'' +
-                ", Longitude='" + Longitude + '\'' +
+                ", Latitude='" + getLatitude() + '\'' +
+                ", Longitude='" + getLongitude() + '\'' +
                 ", spd='" + spd + '\'' +
                 ", cog='" + cog + '\'' +
                 ", date='" + date + '\'' +

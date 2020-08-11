@@ -94,10 +94,6 @@ public class LoginModel {
         return Integer.parseInt(LocalArguments.getInstance().gpsUploadSpeed());
     }
 
-    public double getCarMaxSpeed() {
-        return Double.parseDouble(LocalArguments.getInstance().maxSpeed());
-    }
-
     public void saveGpsUploadSpeed(String speed) {
         LocalArguments.getInstance().saveGpsUploadSpeed(speed);
     }
@@ -125,11 +121,4 @@ public class LoginModel {
         return "";
     }
 
-    public String getSipDomain() {
-        return LocalArguments.getInstance().sipDomain();
-    }
-
-    public String getSipNumber() {
-        return LocalArguments.getInstance().sipCallNumber();
-    }
 }

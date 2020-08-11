@@ -1,6 +1,5 @@
 package com.dimine.cardcar.domain.mainactivity;
 
-import android.os.SystemClock;
 import android.support.v7.app.AppCompatDelegate;
 import android.util.Log;
 
@@ -13,7 +12,6 @@ import com.dimine.cardcar.data.bean.RMCBean;
 import com.dimine.cardcar.data.bean.ResponseBean;
 import com.dimine.cardcar.data.local.LocalArguments;
 import com.dimine.cardcar.data.remote.Urls;
-import com.dimine.cardcar.manager.GpsManager;
 import com.dimine.cardcar.manager.MyNetWorkManager;
 import com.dimine.cardcar.manager.SendDataManager;
 import com.dimine.cardcar.utils.MyLog;
@@ -30,36 +28,21 @@ import com.lzy.okgo.model.Response;
  * desc   :
  * version: 1.0
  */
-public class MainPresenter implements MainContract.Presenter, GpsManager.GpsSensorDataListener,
-        MyNetWorkManager.OnNetWorkManagerListener {
+public class MainPresenter implements MainContract.Presenter, MyNetWorkManager.OnNetWorkManagerListener {
 
     private static final String TAG = MainPresenter.class.getSimpleName();
 
     private final MainContract.View mMainView;
     private final MainModel mModel;
-    private GpsManager gpsManager;
     private MyNetWorkManager netWorkManager;
 
-    public MainPresenter(MainModel mainModel, MainContract.View mainView, GpsManager gpsManager,
+    public MainPresenter(MainModel mainModel, MainContract.View mainView,
                          MyNetWorkManager netWorkManager) {
         mModel = mainModel;
         mMainView = mainView;
-        this.gpsManager = gpsManager;
         this.netWorkManager = netWorkManager;
         setSensorListener();
         mMainView.setPresenter(this);
-    }
-
-    private void setSensorListener() {
-        Log.d("SensorListener", "注册 main setSensorListener");
-        gpsManager.setGpsSensorDataListener(this);
-        netWorkManager.setNetWorkListener(this);
-    }
-
-    private void removeListener() {
-        Log.d("SensorListener", "移除 main setSensorListener");
-        gpsManager.setGpsSensorDataListener(null);
-        netWorkManager.setNetWorkListener(null);
     }
 
     UploadRunnable runnable;
@@ -74,15 +57,6 @@ public class MainPresenter implements MainContract.Presenter, GpsManager.GpsSens
         }
     }
 
-
-    /**
-     * GPS的信息 经纬度
-     */
-    @Override
-    public void onLatitudeAndLongitude(double latitude, double longitude) {
-
-    }
-
     private RMCBean currentRMCBean = null;
 
     @Override
@@ -90,49 +64,9 @@ public class MainPresenter implements MainContract.Presenter, GpsManager.GpsSens
         this.currentRMCBean = rmcBean;
     }
 
-    /**
-     * GPS的信息，行驶速度
-     */
-    @Override
-    public void onSpeed(double speed) {
-        String showSpeed = speed == 0 ? "0" : speed + "";
-        MyLog.d("Speed", showSpeed);
-        speedAlarm(speed);
-        carSpeed(showSpeed);
-    }
-
-    /**
-     * 卫星数
-     */
-    @Override
-    public void onSatelliteNumber(int number) {
-        gpsAmounts(number);
-    }
-
-    private boolean checkTime = false;
-
-    @Override
-    public void onTimestamp(long timestamp) {
-        if (!checkTime) {
-            MyLog.d("timestamp", timestamp + "");
-            SystemClock.setCurrentTimeMillis(timestamp * 1000L);
-            checkTime = true;
-        }
-    }
-
-    @Override
-    public void carSpeed(String speed) {
-
-    }
-
-    @Override
-    public void gpsAmounts(int number) {
-        mMainView.showGpsAmount(number);
-    }
-
-    @Override
-    public void netStrength(int net) {
-        mMainView.showNetStrength(net);
+    private void setSensorListener() {
+        Log.d("SensorListener", "注册 main setSensorListener");
+        netWorkManager.setNetWorkListener(this);
     }
 
     @Override
@@ -198,27 +132,6 @@ public class MainPresenter implements MainContract.Presenter, GpsManager.GpsSens
         mMainView.showExitDialog();
     }
 
-    @Override
-    public void callControlRoom() {
-
-    }
-
-    private int counter = 0;
-    private int duration = 15;
-
-    @Override
-    public void speedAlarm(double speed) {
-        /*
-         *1.提示司机超速，如果超速，15秒提醒一次
-         *2.生成一条记录
-         */
-        if (speed > mModel.getCarMaxSpeed() && counter > duration) {
-            generateAlarmLog(speed);
-            mMainView.showVoice(mMainView.getContext().getString(R.string.hint_over_speed));
-            counter = 0;
-        }
-        counter++;
-    }
 
     @Override
     public void loadUserName() {
@@ -237,11 +150,6 @@ public class MainPresenter implements MainContract.Presenter, GpsManager.GpsSens
 
     public void goSettings() {
         mMainView.showImplementionSettings();
-    }
-
-
-    private void generateAlarmLog(double speed) {
-        // TODO: 2019/9/3  生成的超速报警
     }
 
     private void uploadGps() {
@@ -270,7 +178,6 @@ public class MainPresenter implements MainContract.Presenter, GpsManager.GpsSens
 
     @Override
     public void onNetWork(boolean ok) {
-        //网络状态
         mMainView.showNetWorkConnect(ok);
     }
 

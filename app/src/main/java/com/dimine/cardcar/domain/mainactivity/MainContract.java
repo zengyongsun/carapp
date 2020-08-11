@@ -5,6 +5,7 @@ import android.content.Context;
 import com.dimine.cardcar.base.BottomType;
 import com.dimine.cardcar.base.mvpBase.BasePresenter;
 import com.dimine.cardcar.base.mvpBase.BaseView;
+import com.dimine.cardcar.data.bean.RMCBean;
 
 /**
  * @author : Zeyo
@@ -22,13 +23,7 @@ public interface MainContract {
          */
         void showGpsAmount(int amount);
 
-        /**
-         * 网络强度
-         */
-        void showNetStrength(int net);
-
         void showFragment(BottomType flag);
-
 
         void showNightModel(boolean bl);
 
@@ -39,7 +34,6 @@ public interface MainContract {
         void showLoginActivity();
 
         void showExitDialog();
-
 
         void showVoice(String prompt);
 
@@ -58,12 +52,6 @@ public interface MainContract {
 
     interface Presenter extends BasePresenter {
 
-        void carSpeed(String speed);
-
-        void gpsAmounts(int number);
-
-        void netStrength(int net);
-
         void nightModelChange(boolean isNight);
 
         void recreate();
@@ -74,15 +62,13 @@ public interface MainContract {
 
         void exitDialog();
 
-        void callControlRoom();
-
-        void speedAlarm(double speed);
-
         void loadUserName();
 
         void verifySettingPassword(String passowrd);
 
         void destroy();
+
+        void onUpDate(RMCBean rmcBean);
     }
 
 }

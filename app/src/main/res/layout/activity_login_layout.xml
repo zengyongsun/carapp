@@ -11,7 +11,6 @@
         android:id="@+id/topLayout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/qb_px_50"
-        android:layout_marginTop="@dimen/dp_10"
         android:background="@mipmap/icon_head_bg"
         android:gravity="center_vertical"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -51,37 +50,22 @@
 
         <ImageView
             android:id="@+id/ivTransfer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_toLeftOf="@+id/led"
-            tools:src="@mipmap/icon_connect_no" />
-
-        <ImageView
-            android:id="@+id/led"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/qb_px_40"
+            android:layout_height="@dimen/qb_px_40"
+            android:layout_alignParentTop="true"
             android:layout_gravity="center_vertical"
             android:layout_toLeftOf="@+id/ivGPS"
-            tools:src="@mipmap/icon_sip_no" />
+            tools:src="@mipmap/icon_connect_no" />
 
         <com.dimine.cardcar.view.GpsImageView
             android:id="@+id/ivGPS"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_toLeftOf="@+id/ivWifi"
-            android:gravity="center"
-            android:src="@mipmap/icon_gps_no" />
-
-        <com.dimine.cardcar.view.SignalImageView
-            android:id="@+id/ivWifi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/qb_px_40"
+            android:layout_height="@dimen/qb_px_40"
             android:layout_alignParentRight="true"
             android:layout_gravity="center_vertical"
             android:layout_marginRight="@dimen/qb_px_24"
-            tools:src="@mipmap/icon_4g_no" />
+            android:gravity="center"
+            android:src="@mipmap/icon_gps_no" />
 
     </RelativeLayout>
 
@@ -89,17 +73,17 @@
         android:id="@+id/userLayout"
         android:layout_width="@dimen/qb_px_376"
         android:layout_height="@dimen/qb_px_67"
-        app:layout_constraintVertical_bias="0.5"
         android:background="@mipmap/login_input"
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:gravity="center_vertical"
-        app:layout_constraintBottom_toTopOf="@+id/passwordLayout"
         android:orientation="horizontal"
-        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintBottom_toTopOf="@+id/passwordLayout"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/loginHistory"
-        app:layout_constraintTop_toBottomOf="@+id/topLayout">
+        app:layout_constraintTop_toBottomOf="@+id/topLayout"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintVertical_chainStyle="packed">
 
         <ImageView
             android:id="@+id/tvUser"
@@ -136,9 +120,9 @@
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:gravity="center_vertical"
+        app:layout_constraintBottom_toTopOf="@+id/btLogin"
         app:layout_constraintLeft_toLeftOf="@+id/userLayout"
         app:layout_constraintRight_toRightOf="@+id/userLayout"
-        app:layout_constraintBottom_toTopOf="@+id/btLogin"
         app:layout_constraintTop_toBottomOf="@+id/userLayout">
 
         <ImageView
@@ -174,9 +158,9 @@
         android:textAllCaps="false"
         android:textColor="@color/medium_text_color"
         android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/line"
         app:layout_constraintLeft_toLeftOf="@+id/passwordLayout"
         app:layout_constraintRight_toRightOf="@+id/passwordLayout"
-        app:layout_constraintBottom_toTopOf="@+id/line"
         app:layout_constraintTop_toBottomOf="@+id/passwordLayout" />
 
 
@@ -185,13 +169,13 @@
         android:layout_width="@dimen/qb_px_359"
         android:layout_height="@dimen/qb_px_300"
         android:background="@mipmap/login_history_bg"
-        app:layout_constraintBottom_toTopOf="@+id/line"
         android:paddingLeft="@dimen/qb_px_5"
         android:paddingTop="@dimen/qb_px_46"
         android:paddingRight="@dimen/qb_px_5"
         android:paddingBottom="@dimen/qb_px_46"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/line"
         app:layout_constraintLeft_toRightOf="@+id/userLayout"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topLayout" />
 
     <View

@@ -1,6 +1,5 @@
 package com.dimine.cardcar.domain.login;
 
-import android.os.SystemClock;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
@@ -17,10 +16,8 @@ import com.dimine.cardcar.data.bean.ResponseBean;
 import com.dimine.cardcar.data.bean.UserBean;
 import com.dimine.cardcar.data.local.LocalArguments;
 import com.dimine.cardcar.data.remote.Urls;
-import com.dimine.cardcar.manager.GpsManager;
 import com.dimine.cardcar.manager.MyNetWorkManager;
 import com.dimine.cardcar.manager.SendDataManager;
-import com.dimine.cardcar.manager.WriteLogManager;
 import com.dimine.cardcar.utils.DateFormatUtils;
 import com.dimine.cardcar.utils.MyLog;
 import com.dimine.cardcar.utils.PlayVoiceUtil;
@@ -39,47 +36,30 @@ import java.util.Date;
  * desc   :
  * version: 1.0
  */
-public class LoginPresenter implements LoginContract.Presenter, GpsManager.GpsSensorDataListener,
-        MyNetWorkManager.OnNetWorkManagerListener {
+public class LoginPresenter implements LoginContract.Presenter, MyNetWorkManager.OnNetWorkManagerListener {
 
     private LoginContract.View mLoginView;
     private LoginModel mModel;
-    private GpsManager gpsManager;
     private MyNetWorkManager netWorkManager;
 
     public LoginPresenter(@NonNull LoginModel model, @NonNull LoginContract.View loginView,
-                          GpsManager gpsManager, MyNetWorkManager netWorkManager,
-                          String from) {
+                          MyNetWorkManager netWorkManager, String from) {
         mModel = model;
         mLoginView = loginView;
-        this.gpsManager = gpsManager;
+
         this.netWorkManager = netWorkManager;
-        setSensorListener();
+        netWorkManager.setNetWorkListener(this);
         mLoginView.setPresenter(this);
         //不是来自主界面的启动，需要获取调度任务
-//        if (!"main".equals(from)) {
-//            getProductionTask = new GetProductionTask();
-//            Helper.getHandler().postDelayed(getProductionTask, 60 * 1000);
-//        }
+        if (!"main".equals(from)) {
+            getProductionTask = new GetProductionTask();
+            Helper.getHandler().postDelayed(getProductionTask, 60 * 1000);
+        }
     }
 
-    private void setSensorListener() {
-        Log.d("SensorListener", "注册 login setSensorListener");
-        gpsManager.setGpsSensorDataListener(this);
-        netWorkManager.setNetWorkListener(this);
-    }
-
-    private void removeListener() {
-        Log.d("SensorListener", "移除 login setSensorListener");
-        gpsManager.setGpsSensorDataListener(null);
-        netWorkManager.setNetWorkListener(null);
-    }
 
     @Override
     public void login(String userId, String userName) {
-        //权限请求
-
-
         if ("".equals(userId) || null == userId) {
             mLoginView.showToastMessage(mLoginView.getContext().getString(R.string.error_user_id_not_empty));
             return;
@@ -114,7 +94,6 @@ public class LoginPresenter implements LoginContract.Presenter, GpsManager.GpsSe
                             }
                         } catch (Exception e) {
                             mLoginView.showToastMessage("解析数据出错！" + e.getMessage());
-                            WriteLogManager.getInstance().writeLog("【login】" + e.toString());
                         }
                     }
 
@@ -123,7 +102,6 @@ public class LoginPresenter implements LoginContract.Presenter, GpsManager.GpsSe
                         mLoginView.voice(mLoginView.getContext().getString(R.string.error_login_failure));
                         MyLog.e("LoginPresenter#requestConfig", response.code() + " " + response.message());
                         mLoginView.showToastMessage(mLoginView.getContext().getString(R.string.error_network));
-                        WriteLogManager.getInstance().writeLog("【login】" + response.message());
                     }
 
                     @Override
@@ -184,7 +162,6 @@ public class LoginPresenter implements LoginContract.Presenter, GpsManager.GpsSe
         }
     }
 
-
     public void loadTitle(String title) {
         mLoginView.showTitle(title);
     }
@@ -197,11 +174,6 @@ public class LoginPresenter implements LoginContract.Presenter, GpsManager.GpsSe
         }
     }
 
-    @Override
-    public void onLatitudeAndLongitude(double latitude, double longitude) {
-
-    }
-
     private RMCBean currentRMCBean = null;
 
     @Override
@@ -212,8 +184,6 @@ public class LoginPresenter implements LoginContract.Presenter, GpsManager.GpsSe
     private void uploadGps() {
         MyLog.d("Login", "uploadGps " + currentRMCBean + connect);
         if (currentRMCBean != null && connect) {
-//        currentRMCBean = new RMCBean("095243.00", "A", "3529.81759",
-//                "11351.28316", "2.492", "", "030520");
             MyLog.d("Login", "uploadGps " + mModel.getGpsUpload());
             GpsPackage gpsPackage = new GpsPackage(currentRMCBean);
             if (mModel.getCarTypeId() == CarType.Forklift.getTypeId()) {
@@ -228,52 +198,8 @@ public class LoginPresenter implements LoginContract.Presenter, GpsManager.GpsSe
     }
 
     @Override
-    public void onSpeed(double speed) {
-        speedAlarm(speed);
-    }
-
-    private int counter = 0;
-    private int duration = 15;
-
-    public void speedAlarm(double speed) {
-        /*
-         *1.提示司机超速，如果超速，15秒提醒一次
-         *2.生成一条记录
-         */
-        if (speed > mModel.getCarMaxSpeed() && counter > duration) {
-            generateAlarmLog(speed);
-            mLoginView.voice(mLoginView.getContext().getString(R.string.hint_over_speed));
-            counter = 0;
-        }
-        counter++;
-    }
-
-    private void generateAlarmLog(double speed) {
-        // TODO: 2019/10/30 生成的超速报警
-    }
-
-
-    @Override
     public void onSatelliteNumber(int number) {
         mLoginView.showGpsAmount(number);
-    }
-
-    private boolean checkTime = false;
-
-    @Override
-    public void onTimestamp(long timestamp) {
-        if (!checkTime) {
-            MyLog.d("timestamp", timestamp + "");
-            SystemClock.setCurrentTimeMillis(timestamp * 1000L);
-            checkTime = true;
-        }
-        MyLog.d("timestamp", timestamp + "" + checkTime);
-    }
-
-
-    @Override
-    public void netStrength(int net) {
-        mLoginView.showNetStrength(net);
     }
 
     @Override
@@ -295,14 +221,12 @@ public class LoginPresenter implements LoginContract.Presenter, GpsManager.GpsSe
                             }
                         } catch (Exception e) {
                             mLoginView.showToastMessage("解析数据出错！");
-                            WriteLogManager.getInstance().writeLog("【requestConfig】" + e.toString());
                         }
                     }
 
                     @Override
                     public void onError(Response<String> response) {
                         MyLog.e("LoginPresenter", response.code() + " " + response.message());
-                        WriteLogManager.getInstance().writeLog("【requestConfig】" + response.message());
                     }
                 });
     }
@@ -319,17 +243,9 @@ public class LoginPresenter implements LoginContract.Presenter, GpsManager.GpsSe
         if (sendWarning != null) {
             Helper.getHandler().removeCallbacks(sendWarning);
         }
-//        removeListener();
     }
 
     private boolean connect = false;
-
-    @Override
-    public void onNetWork(boolean ok) {
-        mLoginView.showNetWorkConnect(ok);
-        connect = ok;
-    }
-
 
     class UploadRunnable implements Runnable {
 
@@ -367,21 +283,19 @@ public class LoginPresenter implements LoginContract.Presenter, GpsManager.GpsSe
 
                             } catch (Exception e) {
                                 mLoginView.showToastMessage("解析数据出错！");
-                                WriteLogManager.getInstance().writeLog("【get_production_task】" + e.toString());
                             }
                         }
 
                         @Override
                         public void onError(Response<String> response) {
                             MyLog.e("LoginPresenter#GetProductionTask", response.code() + " " + response.message());
-                            WriteLogManager.getInstance().writeLog("【get_production_task】" + response.message());
                             Helper.getHandler().postDelayed(GetProductionTask.this, 30 * 1000);
                         }
                     });
         }
     }
 
-    SendWarning sendWarning;
+    private SendWarning sendWarning;
 
     class SendWarning implements Runnable {
 
@@ -389,9 +303,9 @@ public class LoginPresenter implements LoginContract.Presenter, GpsManager.GpsSe
         public void run() {
             FaultPackage faultPackage = new FaultPackage();
             faultPackage.timeHHssmm = DateFormatUtils.timeHHmmss();
-            if (Helper.getHelper().getApp().gpsManager.currentRMCBean != null) {
-                faultPackage.longitude = Helper.getHelper().getApp().gpsManager.currentRMCBean.Longitude;
-                faultPackage.latitude = Helper.getHelper().getApp().gpsManager.currentRMCBean.Latitude;
+            if (currentRMCBean != null) {
+                faultPackage.longitude = currentRMCBean.Longitude;
+                faultPackage.latitude = currentRMCBean.Latitude;
             }
             faultPackage.terminalID = mModel.getDeviceNumber();
             faultPackage.equipmentNo = "";
@@ -405,5 +319,11 @@ public class LoginPresenter implements LoginContract.Presenter, GpsManager.GpsSe
             }
             SendDataManager.getInstance().sendData(faultPackage.toString());
         }
+    }
+
+    @Override
+    public void onNetWork(boolean ok) {
+        mLoginView.showNetWorkConnect(ok);
+        connect = ok;
     }
 }

@@ -24,14 +24,12 @@ public interface Urls {
     String url_out = "/SmartMine/TerminalManage/Terminal/Logout?";
 
 
-    String url_get_truck_weight_count = "/SmartMine/TerminalManage/Terminal/GetTruckWeightCount?";
-
-    String url_get_digger_statistics = "/SmartMine/TerminalManage/Terminal/GetDiggerWeightCount?";
-
     String url_get_config = "/SmartMine/TerminalManage/Terminal/GetConfig?";
 
     String write_log_url = "/SmartMine/TerminalManage/Terminal/WriteLog";
 
     String url_get_production_task = "/SmartMine/TerminalManage/Terminal/GetProductionTask?";
+
+    String heartbeat_url = "/SmartMine/TerminalManage/Terminal/Getlink";
 
 }

@@ -5,7 +5,6 @@ import android.support.annotation.Nullable;
 import android.widget.TextView;
 
 import com.dimine.cardcar.R;
-import com.dimine.cardcar.base.Helper;
 import com.dimine.cardcar.base.mvpBase.BaseActivity;
 import com.dimine.cardcar.utils.MyToast;
 import com.dimine.cardcar.view.dialog.InputPwdDialog;
@@ -104,7 +103,6 @@ public class SettingsActivity extends BaseActivity implements SettingsContract.V
                 } else {
                     showToastMessage(getString(R.string.hint_modify_failure));
                 }
-                Helper.getHelper().getApp().modifyServiceIp();
                 dialog.dismiss();
             }
         });

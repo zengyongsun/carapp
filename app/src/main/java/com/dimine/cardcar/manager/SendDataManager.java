@@ -25,7 +25,6 @@ public class SendDataManager {
 
     private static final SendDataManager ourInstance = new SendDataManager();
 
-
     public static SendDataManager getInstance() {
         return ourInstance;
     }
@@ -34,7 +33,7 @@ public class SendDataManager {
     private Box<ErrorBean> errorBeanBox;
     private NetWork netWork;
 
-    public void setTelnetManager(NetWork netWork) {
+    public void setNetWorkManager(NetWork netWork) {
         this.netWork = netWork;
         this.upBox = ObjectBox.get().boxFor(UpMessageBean.class);
         this.errorBeanBox = ObjectBox.get().boxFor(ErrorBean.class);

@@ -19,12 +19,10 @@ import com.dimine.cardcar.data.bean.SchedulingBean;
 import com.dimine.cardcar.data.bean.TimeRecordBean;
 import com.dimine.cardcar.data.local.LocalArguments;
 import com.dimine.cardcar.data.remote.CommandCodeConstant;
-import com.dimine.cardcar.manager.GpsManager;
 import com.dimine.cardcar.manager.MyNetWorkManager;
 import com.dimine.cardcar.manager.SendDataManager;
 import com.dimine.cardcar.manager.SendRabbitMqManager;
 import com.dimine.cardcar.manager.TimingManager;
-import com.dimine.cardcar.utils.AppExecutors;
 import com.dimine.cardcar.utils.MyLog;
 import com.dimine.cardcar.utils.ObjectBox;
 import com.dimine.cardcar.utils.SPUtils;
@@ -34,7 +32,6 @@ import com.lzy.okgo.interceptor.HttpLoggingInterceptor;
 import com.tencent.bugly.Bugly;
 
 import java.util.Locale;
-import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
@@ -52,13 +49,8 @@ import okhttp3.OkHttpClient;
 public class MyApplication extends Application implements
         SendRabbitMqManager.ReceiveMessageListener, TextToSpeech.OnInitListener {
 
-    public AppExecutors appExecutors = new AppExecutors();
-    public GpsManager gpsManager = new GpsManager();
-
     public TimingManager timingManager;
-
     public MyNetWorkManager networkManager = new MyNetWorkManager();
-
     private TextToSpeech textToSpeech;
 
     /**
@@ -85,15 +77,13 @@ public class MyApplication extends Application implements
         LocalArguments.getInstance().init(this);
         setIdName();
         initMac();
-        SendDataManager.getInstance().setTelnetManager(networkManager);
+        SendDataManager.getInstance().setNetWorkManager(networkManager);
         initNightMode();
         Helper.init(this);
         initManager();
         initSpeech();
         MyLog.isDebug = debug;
-        MyLog.d("life_cycle", "MyApplication ====> onCreate");
     }
-
 
     /**
      * 设置mac地址
@@ -105,14 +95,6 @@ public class MyApplication extends Application implements
             LocalArguments.getInstance().saveMac(ANDROID_ID);
         }
     }
-
-    private String getMyUUID() {
-        UUID uuid = UUID.randomUUID();
-        String uniqueId = uuid.toString().substring(0, 16);
-        MyLog.d("debug", "----->UUID" + uuid);
-        return uniqueId;
-    }
-
 
     public void initSpeech() {
         textToSpeech = new TextToSpeech(getApplicationContext(), this);
@@ -142,9 +124,6 @@ public class MyApplication extends Application implements
         SendRabbitMqManager.getInstance().setReceiveMessageListener(this);
     }
 
-    public void modifyServiceIp() {
-//        SendRabbitMqManager.getInstance().modifyServiceIp();
-    }
 
     private void initOkGo() {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
@@ -198,7 +177,6 @@ public class MyApplication extends Application implements
                         }
                     }
                 }, 600);
-
                 if ("".equals(schedulingBean.TID)) {
                     //信息
                     schedulingBean.id = 1;
@@ -257,7 +235,6 @@ public class MyApplication extends Application implements
                     || result == TextToSpeech.LANG_NOT_SUPPORTED) {
                 Toast.makeText(this, "数据丢失或不支持", Toast.LENGTH_SHORT).show();
             }
-
         }
     }
 

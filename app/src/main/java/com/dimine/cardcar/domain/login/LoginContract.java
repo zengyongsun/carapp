@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 
 import com.dimine.cardcar.base.mvpBase.BasePresenter;
 import com.dimine.cardcar.base.mvpBase.BaseView;
+import com.dimine.cardcar.data.bean.RMCBean;
 import com.dimine.cardcar.data.bean.UserBean;
 
 import java.util.List;
@@ -51,17 +52,11 @@ public interface LoginContract {
          */
         void showGpsAmount(int amount);
 
-        /**
-         * 网络强度
-         */
-        void showNetStrength(int net);
-
         void voice(String str);
 
         void showNetWorkConnect(boolean ok);
 
         Context getContext();
-
 
     }
 
@@ -103,16 +98,15 @@ public interface LoginContract {
         void verifyFactorySettingsPassword(String password);
 
         /**
-         * 网络信号
-         */
-        void netStrength(int net);
-
-        /**
          * 请求配置信息
          */
         void requestConfig();
 
         void destroy();
+
+        void onSatelliteNumber(int number);
+
+        void onUpDate(RMCBean rmcBean);
 
     }
 

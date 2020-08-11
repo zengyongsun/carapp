@@ -54,39 +54,21 @@
 
         <ImageView
             android:id="@+id/ivTransfer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_toLeftOf="@+id/led"
-            tools:src="@mipmap/icon_connect_no" />
-
-        <ImageView
-            android:id="@+id/led"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/qb_px_40"
+            android:layout_height="@dimen/qb_px_40"
             android:layout_gravity="center_vertical"
             android:layout_toLeftOf="@+id/ivGPS"
-            tools:src="@mipmap/icon_sip_no" />
+            tools:src="@mipmap/icon_connect_no" />
 
         <com.dimine.cardcar.view.GpsImageView
             android:id="@+id/ivGPS"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_toLeftOf="@+id/ivWifi"
-            android:gravity="center"
-            android:src="@mipmap/icon_gps_no" />
-
-
-        <com.dimine.cardcar.view.SignalImageView
-            android:id="@+id/ivWifi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/qb_px_40"
+            android:layout_height="@dimen/qb_px_40"
             android:layout_alignParentRight="true"
             android:layout_gravity="center_vertical"
             android:layout_marginRight="@dimen/qb_px_24"
-            tools:src="@mipmap/icon_4g_no" />
-
+            android:gravity="center"
+            android:src="@mipmap/icon_gps_no" />
 
     </RelativeLayout>
 

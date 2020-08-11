@@ -164,7 +164,6 @@ public class MainChanFragment extends Fragment implements ChanMainContract.View 
                 percentage = progress * 1.0 / max;
                 BigDecimal bg = new BigDecimal(percentage);
                 percentage = bg.setScale(1, BigDecimal.ROUND_HALF_UP).doubleValue();
-
             }
             tvProgress.setText(percentage + "%");
         } catch (Exception e) {

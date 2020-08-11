@@ -25,6 +25,7 @@ public class GpsManager  {
     private DecimalFormat df2 = new DecimalFormat("#0");
 
     public GpsManager() {
+
         linkedList = new LinkedList<>();
     }
 
@@ -33,7 +34,6 @@ public class GpsManager  {
     int counter = 0;
 
     double maxSpeed;
-
 
     public void RMCdata(RMCBean rmcBean) {
         //1. 存数据
