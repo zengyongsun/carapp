@@ -3,6 +3,7 @@ package com.dimine.cardcar;
 import android.app.Application;
 import android.content.Context;
 import android.os.Handler;
+import android.provider.Settings;
 import android.speech.tts.TextToSpeech;
 import android.support.multidex.MultiDex;
 import android.support.v7.app.AppCompatDelegate;
@@ -24,13 +25,13 @@ import com.dimine.cardcar.manager.SendDataManager;
 import com.dimine.cardcar.manager.SendRabbitMqManager;
 import com.dimine.cardcar.manager.TimingManager;
 import com.dimine.cardcar.utils.AppExecutors;
-import com.dimine.cardcar.utils.CrashHandler;
 import com.dimine.cardcar.utils.MyLog;
 import com.dimine.cardcar.utils.ObjectBox;
 import com.dimine.cardcar.utils.SPUtils;
 import com.dimine.cardcar.utils.VersionUtil;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.interceptor.HttpLoggingInterceptor;
+import com.tencent.bugly.Bugly;
 
 import java.util.Locale;
 import java.util.UUID;
@@ -79,6 +80,7 @@ public class MyApplication extends Application implements
     }
 
     public void initApp() {
+        Bugly.init(getApplicationContext(), "3a18e6c210", false);
         initOkGo();
         LocalArguments.getInstance().init(this);
         setIdName();
@@ -88,8 +90,6 @@ public class MyApplication extends Application implements
         Helper.init(this);
         initManager();
         initSpeech();
-        //全局异常捕获
-        CrashHandler.getInstance().init();
         MyLog.isDebug = debug;
         MyLog.d("life_cycle", "MyApplication ====> onCreate");
     }
@@ -100,7 +100,9 @@ public class MyApplication extends Application implements
      */
     private void initMac() {
         if (TextUtils.isEmpty(LocalArguments.getInstance().getMac())) {
-            LocalArguments.getInstance().saveMac(getMyUUID());
+            //恢复出厂设置会变
+            String ANDROID_ID = Settings.System.getString(getContentResolver(), Settings.System.ANDROID_ID);
+            LocalArguments.getInstance().saveMac(ANDROID_ID);
         }
     }
 
@@ -110,6 +112,7 @@ public class MyApplication extends Application implements
         MyLog.d("debug", "----->UUID" + uuid);
         return uniqueId;
     }
+
 
     public void initSpeech() {
         textToSpeech = new TextToSpeech(getApplicationContext(), this);

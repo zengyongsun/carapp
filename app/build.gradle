@@ -14,6 +14,11 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         multiDexEnabled true
+
+        ndk {
+            //设置支持的SO库架构
+            abiFilters 'armeabi' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
     }
     buildTypes {
 
@@ -94,6 +99,9 @@ dependencies {
     implementation 'com.lzy.net:okgo:3.0.4'
     implementation 'com.google.code.gson:gson:2.8.0'
     implementation 'pub.devrel:easypermissions:2.0.1'
+
+    implementation 'com.tencent.bugly:crashreport_upgrade:1.4.2'
+
 
 }
 
