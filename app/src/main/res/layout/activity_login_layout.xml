@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/icon_bg"
+    tools:context=".domain.login.LoginActivity">
+
+    <RelativeLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_50"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@mipmap/icon_head_bg"
+        android:gravity="center_vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivHeader"
+            android:layout_width="@dimen/qb_px_36"
+            android:layout_height="@dimen/qb_px_36"
+            android:layout_marginLeft="@dimen/qb_px_24"
+            android:background="@mipmap/icon_header_bg"
+            android:scaleType="center"
+            android:src="@mipmap/icon_header" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/ivHeader"
+            android:layout_alignBottom="@+id/ivHeader"
+            android:layout_gravity="center_vertical"
+            android:layout_toRightOf="@+id/ivHeader"
+            android:gravity="center"
+            android:text="@string/login_left_top_des"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/qb_px_20" />
+
+        <TextView
+            android:id="@+id/tvHeaderDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/app_top_title"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/qb_px_30" />
+
+        <ImageView
+            android:id="@+id/ivTransfer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_toLeftOf="@+id/led"
+            tools:src="@mipmap/icon_connect_no" />
+
+        <ImageView
+            android:id="@+id/led"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_toLeftOf="@+id/ivGPS"
+            tools:src="@mipmap/icon_sip_no" />
+
+        <com.dimine.cardcar.view.GpsImageView
+            android:id="@+id/ivGPS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_toLeftOf="@+id/ivWifi"
+            android:gravity="center"
+            android:src="@mipmap/icon_gps_no" />
+
+        <com.dimine.cardcar.view.SignalImageView
+            android:id="@+id/ivWifi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/qb_px_24"
+            tools:src="@mipmap/icon_4g_no" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/userLayout"
+        android:layout_width="@dimen/qb_px_376"
+        android:layout_height="@dimen/qb_px_67"
+        app:layout_constraintVertical_bias="0.5"
+        android:background="@mipmap/login_input"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toTopOf="@+id/passwordLayout"
+        android:orientation="horizontal"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/loginHistory"
+        app:layout_constraintTop_toBottomOf="@+id/topLayout">
+
+        <ImageView
+            android:id="@+id/tvUser"
+            android:layout_width="@dimen/qb_px_32"
+            android:layout_height="@dimen/qb_px_25"
+            android:layout_marginLeft="@dimen/qb_px_20"
+            android:layout_marginTop="@dimen/qb_px_8"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/login_account" />
+
+        <EditText
+            android:id="@+id/etUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/qb_px_18"
+            android:layout_marginTop="@dimen/qb_px_8"
+            android:layout_marginRight="@dimen/qb_px_18"
+            android:background="@null"
+            android:hint="@string/login_user_account_hint"
+            android:singleLine="true"
+            android:textColor="@color/menu_text_color"
+            android:textColorHint="@color/white"
+            android:textSize="13.5sp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/passwordLayout"
+        android:layout_width="@dimen/qb_px_376"
+        android:layout_height="@dimen/qb_px_67"
+        android:layout_marginTop="@dimen/qb_px_44"
+        android:background="@mipmap/login_input"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center_vertical"
+        app:layout_constraintLeft_toLeftOf="@+id/userLayout"
+        app:layout_constraintRight_toRightOf="@+id/userLayout"
+        app:layout_constraintBottom_toTopOf="@+id/btLogin"
+        app:layout_constraintTop_toBottomOf="@+id/userLayout">
+
+        <ImageView
+            android:id="@+id/tvPassword"
+            android:layout_width="@dimen/qb_px_32"
+            android:layout_height="@dimen/qb_px_25"
+            android:layout_marginLeft="@dimen/qb_px_20"
+            android:layout_marginTop="@dimen/qb_px_8"
+            android:src="@mipmap/login_user_name" />
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/qb_px_18"
+            android:layout_marginTop="@dimen/qb_px_8"
+            android:layout_marginRight="@dimen/qb_px_18"
+            android:background="@null"
+            android:singleLine="true"
+            android:textColor="@color/menu_text_color"
+            android:textSize="13.5sp" />
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btLogin"
+        android:layout_width="@dimen/qb_px_373"
+        android:layout_height="@dimen/qb_px_51"
+        android:layout_marginTop="@dimen/qb_px_54"
+        android:background="@drawable/select_login_bt"
+        android:gravity="center"
+        android:text="@string/login_login_bt"
+        android:textAllCaps="false"
+        android:textColor="@color/medium_text_color"
+        android:textSize="17sp"
+        app:layout_constraintLeft_toLeftOf="@+id/passwordLayout"
+        app:layout_constraintRight_toRightOf="@+id/passwordLayout"
+        app:layout_constraintBottom_toTopOf="@+id/line"
+        app:layout_constraintTop_toBottomOf="@+id/passwordLayout" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/loginHistory"
+        android:layout_width="@dimen/qb_px_359"
+        android:layout_height="@dimen/qb_px_300"
+        android:background="@mipmap/login_history_bg"
+        app:layout_constraintBottom_toTopOf="@+id/line"
+        android:paddingLeft="@dimen/qb_px_5"
+        android:paddingTop="@dimen/qb_px_46"
+        android:paddingRight="@dimen/qb_px_5"
+        android:paddingBottom="@dimen/qb_px_46"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/userLayout"
+        app:layout_constraintTop_toBottomOf="@+id/topLayout" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/qb_px_20"
+        android:layout_marginLeft="@dimen/qb_px_26"
+        android:layout_marginTop="@dimen/qb_px_110"
+        android:layout_marginRight="@dimen/qb_px_26"
+        android:layout_marginBottom="@dimen/qb_px_24"
+        android:background="@mipmap/login_time_line"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <com.dimine.cardcar.view.TimeView
+        android:id="@+id/timeView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/qb_px_2"
+        android:gravity="center"
+        android:textColor="@color/menu_text_color"
+        android:textSize="@dimen/qb_px_18"
+        app:haveSecond="1"
+        app:layout_constraintBottom_toBottomOf="@+id/line"
+        app:layout_constraintLeft_toLeftOf="@+id/line" />
+
+
+</android.support.constraint.ConstraintLayout>

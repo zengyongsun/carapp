@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/icon_bg"
+    tools:context=".domain.advance.AdvanceSettingActivity">
+
+    <RelativeLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_50"
+        android:layout_marginLeft="@dimen/qb_px_63"
+        android:layout_marginTop="@dimen/qb_px_10"
+        android:layout_marginRight="@dimen/qb_px_52"
+        android:background="@mipmap/settings_imp_top"
+        android:gravity="center_vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@+id/ivHeader"
+            android:layout_alignBottom="@+id/ivHeader"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/qb_px_15"
+            android:gravity="center"
+            android:padding="@dimen/qb_px_10"
+            android:text="@string/top_back_desc"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/text_size_one" />
+
+
+        <TextView
+            android:id="@+id/topTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/setting_first"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/qb_px_30" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/terminalNumberLayout"
+        android:layout_width="@dimen/qb_px_376"
+        android:layout_height="@dimen/qb_px_67"
+        android:layout_marginLeft="@dimen/qb_px_51"
+        android:layout_marginTop="@dimen/qb_px_45"
+        android:background="@drawable/select_login_input_bt"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topLayout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/qb_px_24"
+            android:layout_marginTop="@dimen/qb_px_8"
+            android:text="终端编号"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/text_size_two" />
+
+        <TextView
+            android:id="@+id/tvTerminalNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/qb_px_8"
+            android:layout_marginRight="@dimen/qb_px_30"
+            android:text="1003"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/text_size_two" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/terminalNameLayout"
+        android:layout_width="@dimen/qb_px_376"
+        android:layout_height="@dimen/qb_px_67"
+        android:layout_marginLeft="@dimen/qb_px_51"
+        android:layout_marginTop="@dimen/qb_px_15"
+        android:background="@drawable/select_login_input_bt"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/deviceTitle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/terminalNumberLayout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/qb_px_24"
+            android:layout_marginTop="@dimen/qb_px_8"
+            android:text="终端类型"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/text_size_two" />
+
+        <TextView
+            android:id="@+id/tvTerminalName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/qb_px_8"
+            android:layout_marginRight="@dimen/qb_px_30"
+            android:text="1003"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/text_size_two" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/deviceTitle"
+        android:layout_width="@dimen/qb_px_376"
+        android:layout_height="@dimen/qb_px_67"
+        android:layout_marginLeft="@dimen/qb_px_51"
+        android:layout_marginTop="@dimen/qb_px_15"
+        android:background="@drawable/select_login_input_bt"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/deviceIdLayout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/terminalNameLayout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/qb_px_24"
+            android:layout_marginTop="@dimen/qb_px_8"
+            android:text="终端标题"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/text_size_two" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/qb_px_8"
+            android:layout_marginRight="@dimen/qb_px_30"
+            android:text="卡调系统"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/text_size_two" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/deviceIdLayout"
+        android:layout_width="@dimen/qb_px_376"
+        android:layout_height="@dimen/qb_px_67"
+        android:layout_marginLeft="@dimen/qb_px_51"
+        android:layout_marginTop="@dimen/qb_px_15"
+        android:background="@drawable/select_login_input_bt"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/layoutMessage"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deviceTitle">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/qb_px_24"
+            android:layout_marginTop="@dimen/qb_px_8"
+            android:text="终端ID"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/text_size_two" />
+
+        <TextView
+            android:id="@+id/tvDeviceId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/qb_px_8"
+            android:layout_marginRight="@dimen/qb_px_30"
+            android:text="1003"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/text_size_two" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/layoutMessage"
+        android:layout_width="@dimen/qb_px_376"
+        android:layout_height="@dimen/qb_px_67"
+        android:layout_marginLeft="@dimen/qb_px_51"
+        android:layout_marginTop="@dimen/qb_px_15"
+        android:layout_marginBottom="@dimen/qb_px_50"
+        android:background="@drawable/select_login_input_bt"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deviceIdLayout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/qb_px_24"
+            android:layout_marginTop="@dimen/qb_px_8"
+            android:text="终端备注"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/text_size_two" />
+
+        <TextView
+            android:id="@+id/tvMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/qb_px_8"
+            android:layout_marginRight="@dimen/qb_px_30"
+            android:text="备注"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/text_size_two" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/voiceNumber"
+        android:layout_width="@dimen/qb_px_300"
+        android:layout_height="@dimen/qb_px_67"
+        android:layout_marginLeft="@dimen/qb_px_51"
+        android:layout_marginTop="@dimen/qb_px_15"
+        android:layout_marginBottom="@dimen/qb_px_50"
+        android:background="@drawable/select_login_input_bt"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/layoutMessage"
+        app:layout_constraintRight_toLeftOf="@+id/screenTest"
+        app:layout_constraintTop_toBottomOf="@+id/deviceIdLayout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/qb_px_24"
+            android:layout_marginTop="@dimen/qb_px_8"
+            android:text="播报次数"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/text_size_two" />
+
+        <TextView
+            android:id="@+id/tvCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/qb_px_8"
+            android:layout_marginRight="@dimen/qb_px_30"
+            android:text="1"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/text_size_two" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/sipAutoSetting"
+        android:layout_width="@dimen/qb_px_150"
+        android:layout_height="@dimen/qb_px_45"
+        android:layout_marginLeft="@dimen/qb_px_51"
+        android:layout_marginTop="@dimen/qb_px_45"
+        android:layout_marginRight="@dimen/qb_px_30"
+        android:layout_marginBottom="@dimen/qb_px_36"
+        android:background="@drawable/select_login_bt"
+        android:gravity="center"
+        android:text="自动接听 off"
+        android:textColor="@color/medium_text_color"
+        android:textSize="15sp"
+        app:layout_constraintRight_toLeftOf="@+id/sipSetting"
+        app:layout_constraintTop_toBottomOf="@+id/topLayout" />
+
+    <Button
+        android:id="@+id/cpeSettings"
+        android:layout_width="@dimen/qb_px_150"
+        android:layout_height="@dimen/qb_px_45"
+        android:layout_marginLeft="@dimen/qb_px_51"
+        android:layout_marginTop="@dimen/qb_px_30"
+        android:layout_marginRight="@dimen/qb_px_30"
+        android:layout_marginBottom="@dimen/qb_px_36"
+        android:background="@drawable/select_login_bt"
+        android:gravity="center"
+        android:text="CPE设置"
+        android:textColor="@color/medium_text_color"
+        android:textSize="15sp"
+        app:layout_constraintRight_toLeftOf="@+id/sipSetting"
+        app:layout_constraintTop_toBottomOf="@+id/sipAutoSetting" />
+
+    <Button
+        android:id="@+id/btDel"
+        android:layout_width="@dimen/qb_px_150"
+        android:layout_height="@dimen/qb_px_45"
+        android:layout_marginLeft="@dimen/qb_px_51"
+        android:layout_marginTop="@dimen/qb_px_30"
+        android:layout_marginRight="@dimen/qb_px_30"
+        android:layout_marginBottom="@dimen/qb_px_36"
+        android:background="@drawable/select_login_bt"
+        android:gravity="center"
+        android:text="清除数据"
+        android:textColor="@color/medium_text_color"
+        android:textSize="15sp"
+        app:layout_constraintRight_toLeftOf="@+id/sipSetting"
+        app:layout_constraintTop_toBottomOf="@+id/cpeSettings" />
+
+
+    <Button
+        android:id="@+id/btCamera"
+        android:layout_width="@dimen/qb_px_150"
+        android:layout_height="@dimen/qb_px_45"
+        android:layout_marginLeft="@dimen/qb_px_51"
+        android:layout_marginTop="@dimen/qb_px_30"
+        android:layout_marginRight="@dimen/qb_px_30"
+        android:layout_marginBottom="@dimen/qb_px_36"
+        android:background="@drawable/select_login_bt"
+        android:gravity="center"
+        android:text="打开相机"
+        android:textColor="@color/medium_text_color"
+        android:textSize="15sp"
+        app:layout_constraintRight_toLeftOf="@+id/sipSetting"
+        app:layout_constraintTop_toBottomOf="@+id/btDel" />
+
+
+    <Button
+        android:id="@+id/sipSetting"
+        android:layout_width="@dimen/qb_px_150"
+        android:layout_height="@dimen/qb_px_45"
+        android:layout_marginLeft="@dimen/qb_px_51"
+        android:layout_marginTop="@dimen/qb_px_45"
+        android:layout_marginRight="@dimen/qb_px_30"
+        android:layout_marginBottom="@dimen/qb_px_36"
+        android:background="@drawable/select_login_bt"
+        android:gravity="center"
+        android:text="SIP设置"
+        android:textColor="@color/medium_text_color"
+        android:textSize="17sp"
+        app:layout_constraintRight_toLeftOf="@+id/sipCall"
+        app:layout_constraintTop_toBottomOf="@+id/topLayout" />
+
+
+    <Button
+        android:id="@+id/sipCall"
+        android:layout_width="@dimen/qb_px_150"
+        android:layout_height="@dimen/qb_px_45"
+        android:layout_marginTop="@dimen/qb_px_45"
+        android:layout_marginRight="@dimen/qb_px_54"
+        android:layout_marginBottom="@dimen/qb_px_36"
+        android:background="@drawable/select_login_bt"
+        android:gravity="center"
+        android:text="拨打SIP"
+        android:textColor="@color/medium_text_color"
+        android:textSize="17sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topLayout" />
+
+
+    <Button
+        android:id="@+id/voiceLayout"
+        android:layout_width="@dimen/qb_px_150"
+        android:layout_height="@dimen/qb_px_45"
+        android:layout_marginLeft="@dimen/qb_px_51"
+        android:layout_marginTop="@dimen/qb_px_30"
+        android:layout_marginRight="@dimen/qb_px_54"
+        android:background="@drawable/select_login_bt"
+        android:gravity="center"
+        android:text="语音播报"
+        android:textColor="@color/medium_text_color"
+        android:textSize="17sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sipCall" />
+
+
+    <Button
+        android:id="@+id/mbGoSystem"
+        android:layout_width="@dimen/qb_px_150"
+        android:layout_height="@dimen/qb_px_45"
+        android:layout_marginRight="@dimen/qb_px_30"
+        android:background="@drawable/select_login_bt"
+        android:gravity="center"
+        android:text="系统设置"
+        android:textColor="@color/medium_text_color"
+        android:textSize="17sp"
+        app:layout_constraintRight_toLeftOf="@+id/voiceLayout"
+        app:layout_constraintTop_toTopOf="@+id/voiceLayout" />
+
+
+    <Button
+        android:id="@+id/mImplementation"
+        android:layout_width="@dimen/qb_px_150"
+        android:layout_height="@dimen/qb_px_45"
+        android:layout_marginLeft="@dimen/qb_px_51"
+        android:layout_marginTop="@dimen/qb_px_30"
+        android:layout_marginRight="@dimen/qb_px_54"
+        android:background="@drawable/select_login_bt"
+        android:gravity="center"
+        android:text="实施设置"
+        android:textColor="@color/medium_text_color"
+        android:textSize="17sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/voiceLayout" />
+
+
+    <Button
+        android:id="@+id/mUserSetting"
+        android:layout_width="@dimen/qb_px_150"
+        android:layout_height="@dimen/qb_px_45"
+        android:layout_marginLeft="@dimen/qb_px_51"
+        android:layout_marginRight="@dimen/qb_px_30"
+        android:background="@drawable/select_login_bt"
+        android:gravity="center"
+        android:text="用户设置"
+        android:textColor="@color/medium_text_color"
+        android:textSize="17sp"
+        app:layout_constraintRight_toLeftOf="@+id/mImplementation"
+        app:layout_constraintTop_toTopOf="@+id/mImplementation" />
+
+    <Button
+        android:id="@+id/mAdb"
+        android:layout_width="@dimen/qb_px_150"
+        android:layout_height="@dimen/qb_px_45"
+        android:layout_marginLeft="@dimen/qb_px_51"
+        android:layout_marginTop="@dimen/qb_px_30"
+        android:layout_marginRight="@dimen/qb_px_54"
+        android:background="@drawable/select_login_bt"
+        android:gravity="center"
+        android:text="adb调试"
+        android:textColor="@color/medium_text_color"
+        android:textSize="17sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mUserSetting" />
+
+    <Button
+        android:id="@+id/restart"
+        android:layout_width="@dimen/qb_px_150"
+        android:layout_height="@dimen/qb_px_45"
+        android:layout_marginLeft="@dimen/qb_px_51"
+        android:layout_marginTop="@dimen/qb_px_30"
+        android:layout_marginRight="@dimen/qb_px_30"
+        android:background="@drawable/select_login_bt"
+        android:gravity="center"
+        android:text="重启app"
+        android:textColor="@color/medium_text_color"
+        android:textSize="17sp"
+        app:layout_constraintRight_toLeftOf="@+id/gpsRecord"
+        app:layout_constraintTop_toBottomOf="@+id/mAdb" />
+
+    <Button
+        android:id="@+id/gpsRecord"
+        android:layout_width="@dimen/qb_px_150"
+        android:layout_height="@dimen/qb_px_45"
+        android:layout_marginLeft="@dimen/qb_px_51"
+        android:layout_marginTop="@dimen/qb_px_30"
+        android:layout_marginRight="@dimen/qb_px_54"
+        android:background="@drawable/select_login_bt"
+        android:gravity="center"
+        android:text="GPS日志"
+        android:textColor="@color/medium_text_color"
+        android:textSize="17sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mAdb" />
+
+    <Button
+        android:id="@+id/mDeviceState"
+        android:layout_width="@dimen/qb_px_150"
+        android:layout_height="@dimen/qb_px_45"
+        android:layout_marginRight="@dimen/qb_px_30"
+        android:background="@drawable/select_login_bt"
+        android:gravity="center"
+        android:text="设备参数"
+        android:textColor="@color/medium_text_color"
+        android:textSize="17sp"
+        app:layout_constraintRight_toLeftOf="@+id/mAdb"
+        app:layout_constraintTop_toTopOf="@+id/mAdb" />
+
+
+    <Button
+        android:id="@+id/screenTest"
+        android:layout_width="@dimen/qb_px_150"
+        android:layout_height="@dimen/qb_px_45"
+        android:layout_marginLeft="@dimen/qb_px_51"
+        android:layout_marginTop="@dimen/qb_px_30"
+        android:layout_marginRight="@dimen/qb_px_54"
+        android:background="@drawable/select_login_bt"
+        android:gravity="center"
+        android:text="屏幕测试"
+        android:textColor="@color/medium_text_color"
+        android:textSize="17sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gpsRecord" />
+
+</android.support.constraint.ConstraintLayout>

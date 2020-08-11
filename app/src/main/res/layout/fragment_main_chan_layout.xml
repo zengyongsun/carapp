@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@mipmap/icon_bg"
+    tools:context=".domain.chanFragment.mainChan.MainChanFragment">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/commandLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_26"
+        android:layout_marginRight="@dimen/qb_px_24"
+        android:background="@drawable/select_main_speak_bg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/qb_px_28"
+            android:layout_marginTop="@dimen/qb_px_18"
+            android:src="@mipmap/icon_work_message_desc"
+            app:layout_constraintBottom_toTopOf="@+id/ivVoice"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginLeft="@dimen/qb_px_8"
+            android:text="@string/schedule_desc"
+            android:textColor="@color/medium_text_color"
+            android:textSize="@dimen/text_size_three"
+            app:layout_constraintBottom_toBottomOf="@+id/ivDesc"
+            app:layout_constraintLeft_toRightOf="@+id/ivDesc"
+            app:layout_constraintTop_toTopOf="@+id/ivDesc" />
+
+        <ImageView
+            android:id="@+id/ivVoice"
+            android:layout_width="@dimen/qb_px_30"
+            android:layout_height="@dimen/qb_px_26"
+            android:layout_marginLeft="@dimen/qb_px_28"
+            android:layout_marginTop="@dimen/qb_px_44"
+            android:layout_marginBottom="@dimen/qb_px_44"
+            android:src="@mipmap/icon_voice"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivDesc" />
+
+        <TextView
+            android:id="@+id/tvCommand"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_marginLeft="@dimen/qb_px_24"
+            android:gravity="center|left"
+            android:textColor="@color/medium_text_color"
+            android:textSize="@dimen/text_size_one"
+            app:layout_constraintBottom_toBottomOf="@+id/ivVoice"
+            app:layout_constraintLeft_toRightOf="@+id/ivVoice"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ivVoice"
+            tools:text="在W3装载点装载" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/messageLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_26"
+        android:layout_marginTop="@dimen/qb_px_18"
+        android:layout_marginRight="@dimen/qb_px_18"
+        android:background="@drawable/select_main_speak_bg"
+        app:layout_constraintBottom_toTopOf="@+id/timeLayout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/startAdd"
+        app:layout_constraintTop_toBottomOf="@+id/commandLayout">
+
+        <ImageView
+            android:id="@+id/ivMessageDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/qb_px_28"
+            android:layout_marginTop="@dimen/qb_px_18"
+            android:src="@mipmap/icon_work_message_desc"
+            app:layout_constraintBottom_toTopOf="@+id/ivMessageVoice"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginLeft="@dimen/qb_px_8"
+            android:text="@string/real_time_information"
+            android:textColor="@color/medium_text_color"
+            android:textSize="@dimen/text_size_three"
+            app:layout_constraintBottom_toBottomOf="@+id/ivMessageDesc"
+            app:layout_constraintLeft_toRightOf="@+id/ivMessageDesc"
+            app:layout_constraintTop_toTopOf="@+id/ivMessageDesc" />
+
+        <ImageView
+            android:id="@+id/ivMessageVoice"
+            android:layout_width="@dimen/qb_px_30"
+            android:layout_height="@dimen/qb_px_26"
+            android:layout_marginLeft="@dimen/qb_px_28"
+            android:layout_marginTop="@dimen/qb_px_42"
+            android:layout_marginBottom="@dimen/qb_px_42"
+            android:src="@mipmap/icon_voice"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivMessageDesc" />
+
+        <TextView
+            android:id="@+id/tvMessage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_marginLeft="@dimen/qb_px_24"
+            android:gravity="center|left"
+            android:textColor="@color/medium_text_color"
+            android:textSize="@dimen/text_size_one"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/ivMessageVoice"
+            app:layout_constraintLeft_toRightOf="@+id/ivMessageVoice"
+            app:layout_constraintTop_toTopOf="@+id/ivMessageVoice"
+            tools:text="任务结束后，请速回车库" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/timeLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_26"
+        android:layout_marginTop="@dimen/qb_px_18"
+        android:layout_marginRight="@dimen/qb_px_100"
+        android:background="@mipmap/icon_yun_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/nightModeLayout"
+        app:layout_constraintTop_toBottomOf="@+id/messageLayout">
+
+        <TextView
+            android:id="@+id/tvPlanDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/qb_px_11"
+            android:text="@string/chan_plan_amount_desc"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/text_size_three"
+            app:layout_constraintBottom_toTopOf="@+id/progressBar"
+            app:layout_constraintRight_toRightOf="@+id/progressBar" />
+
+        <TextView
+            android:id="@+id/tvPlanCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/qb_px_11"
+            android:text="0"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/text_size_two"
+            app:layout_constraintRight_toRightOf="@+id/progressBar"
+            app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+
+        <TextView
+            android:id="@+id/tvCompleteDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/qb_px_11"
+            android:text="@string/chan_complete_desc"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/text_size_three"
+            app:layout_constraintBottom_toTopOf="@+id/progressBar"
+            app:layout_constraintLeft_toLeftOf="@+id/progressBar" />
+
+        <TextView
+            android:id="@+id/tvCompleteCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/qb_px_11"
+            android:text="0"
+            android:textColor="@color/high_text_color"
+            android:textSize="@dimen/text_size_two"
+            app:layout_constraintLeft_toLeftOf="@+id/progressBar"
+            app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/qb_px_20"
+            android:layout_marginLeft="@dimen/qb_px_28"
+            android:layout_marginTop="@dimen/qb_px_10"
+            android:layout_marginRight="@dimen/qb_px_44"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:progressDrawable="@drawable/progress_bar_bg"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/workTimeLayout"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:progress="20" />
+
+        <TextView
+            android:id="@+id/tvProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="0%"
+            android:textColor="@color/text_progress_white"
+            android:textSize="@dimen/qb_px_24"
+            app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+            app:layout_constraintLeft_toLeftOf="@+id/progressBar"
+            app:layout_constraintRight_toRightOf="@+id/progressBar"
+            app:layout_constraintTop_toTopOf="@+id/progressBar" />
+
+        <LinearLayout
+            android:id="@+id/workTimeLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/qb_px_28"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/qb_px_38"
+                android:text="@string/chan_work_time_desc"
+                android:textColor="@color/menu_text_color"
+                android:textSize="@dimen/text_size_three" />
+
+            <TextView
+                android:id="@+id/tvWorkTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/qb_px_16"
+                android:layout_marginBottom="@dimen/qb_px_28"
+                android:text="0"
+                android:textColor="@color/menu_text_select_color"
+                android:textSize="@dimen/qb_px_35" />
+
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/startAdd"
+        android:layout_width="@dimen/qb_px_110"
+        android:layout_height="@dimen/qb_px_140"
+        android:layout_marginTop="@dimen/qb_px_6"
+        android:layout_marginRight="@dimen/qb_px_18"
+        android:background="@drawable/select_main_bt"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/messageLayout"
+        app:layout_constraintLeft_toRightOf="@+id/messageLayout"
+        app:layout_constraintRight_toLeftOf="@+id/addComplete"
+        app:layout_constraintTop_toTopOf="@+id/messageLayout">
+
+        <ImageView
+            android:id="@+id/ivAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/qb_px_30"
+            android:layout_marginTop="@dimen/qb_px_28"
+            android:layout_marginRight="@dimen/qb_px_30"
+            android:layout_marginBottom="@dimen/qb_px_16"
+            android:src="@mipmap/icon_zhuang_start_yes"
+            app:layout_constraintBottom_toTopOf="@+id/tvAdd"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivAddClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icon_no_click"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/qb_px_26"
+            android:text="开装"
+            android:textColor="@color/menu_text_select_color"
+            android:textSize="@dimen/text_size_three"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivAdd" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/addComplete"
+        android:layout_width="@dimen/qb_px_110"
+        android:layout_height="@dimen/qb_px_140"
+        android:layout_marginTop="@dimen/qb_px_6"
+        android:layout_marginRight="@dimen/qb_px_24"
+        android:background="@drawable/select_main_bt"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/messageLayout"
+        app:layout_constraintLeft_toRightOf="@+id/startAdd"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/messageLayout">
+
+        <ImageView
+            android:id="@+id/ivComplete"
+            android:layout_width="18dp"
+            android:layout_height="23dp"
+            android:layout_marginLeft="@dimen/qb_px_30"
+            android:layout_marginTop="@dimen/qb_px_28"
+            android:layout_marginRight="@dimen/qb_px_30"
+            android:layout_marginBottom="@dimen/qb_px_16"
+            android:src="@mipmap/icon_zhuang_complete_no"
+            app:layout_constraintBottom_toTopOf="@+id/tvComplete"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivCompleteClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icon_no_click"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvComplete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/qb_px_26"
+            android:text="装完"
+            android:textColor="@color/text_color_no_click"
+            android:textSize="@dimen/text_size_three"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivComplete" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/nightModeLayout"
+        android:layout_width="@dimen/qb_px_110"
+        android:layout_height="@dimen/qb_px_140"
+        android:layout_marginRight="@dimen/qb_px_45"
+        android:background="@drawable/select_main_bt"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/timeLayout"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/timeLayout">
+
+        <ImageView
+            android:id="@+id/ivMode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/qb_px_28"
+            android:layout_marginBottom="@dimen/qb_px_16"
+            android:src="@mipmap/icon_night_mode" />
+
+        <TextView
+            android:id="@+id/tvMode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/qb_px_26"
+            android:text="@string/settings_night_mode"
+            android:textColor="@color/night_mode_text_color"
+            android:textSize="@dimen/text_size_three" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

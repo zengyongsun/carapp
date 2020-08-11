@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/qb_px_537"
+    android:layout_height="wrap_content"
+    android:background="@mipmap/icon_pop_bg">
+
+    <TextView
+        android:id="@+id/dialogTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_px_12"
+        android:text="@string/dialog_high_setting_title"
+        android:textColor="@color/menu_text_color"
+        android:textSize="@dimen/text_size_one"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/RAMLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_px_100"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/ROMLayout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvRam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="运行内存："
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/text_size_larger"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/etRam"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etRam"
+            android:layout_width="@dimen/qb_px_240"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="center"
+            android:hint="GB"
+            android:inputType="number"
+            android:textColor="@color/menu_text_color"
+            android:textColorHint="@color/menu_text_color"
+            android:textSize="@dimen/text_size_larger"
+            app:layout_constraintBottom_toBottomOf="@+id/tvRam"
+            app:layout_constraintLeft_toRightOf="@+id/tvRam"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvRam" />
+
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/icon_pop_line"
+            app:layout_constraintLeft_toLeftOf="@+id/etRam"
+            app:layout_constraintRight_toRightOf="@+id/etRam"
+            app:layout_constraintTop_toBottomOf="@+id/etRam" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/ROMLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_px_30"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/btLayout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RAMLayout">
+
+        <TextView
+            android:id="@+id/tvRom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="存储空间："
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/text_size_larger"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/etRom"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etRom"
+            android:layout_width="@dimen/qb_px_240"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="center"
+            android:hint="GB"
+            android:inputType="number"
+            android:textColor="@color/menu_text_color"
+            android:textColorHint="@color/menu_text_color"
+            android:textSize="@dimen/text_size_larger"
+            app:layout_constraintBottom_toBottomOf="@+id/tvRom"
+            app:layout_constraintLeft_toRightOf="@+id/tvRom"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvRom" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/icon_pop_line"
+            app:layout_constraintLeft_toLeftOf="@+id/etRom"
+            app:layout_constraintRight_toRightOf="@+id/etRom"
+            app:layout_constraintTop_toBottomOf="@+id/etRom" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/btLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_px_50"
+        android:layout_marginBottom="@dimen/qb_px_50"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ROMLayout">
+
+        <Button
+            android:id="@+id/btConfirm"
+            android:layout_width="@dimen/qb_px_120"
+            android:layout_height="@dimen/qb_px_48"
+            android:background="@drawable/select_dialog_confirm"
+            android:text="@string/dialog_button_confirm"
+            android:textAllCaps="false"
+            android:textColor="@color/menu_text_select_color" />
+
+        <Button
+            android:id="@+id/btCancel"
+            android:layout_width="@dimen/qb_px_120"
+            android:layout_height="@dimen/qb_px_48"
+            android:layout_marginLeft="@dimen/qb_px_24"
+            android:background="@drawable/select_dialog_cancel"
+            android:text="@string/dialog_button_cancel"
+            android:textAllCaps="false"
+            android:textColor="@color/menu_text_color" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

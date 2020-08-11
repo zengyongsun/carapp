@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#0B336C</color>
+    <color name="colorPrimaryDark">#49443b</color>
+    <color name="colorAccent">#009688</color>
+
+    <color name="white">#BFFFFFFF</color>
+
+    <color name="text_progress_white">#c1fff7</color>
+
+    <color name="bg_white">#FFFFFF</color>
+
+    <color name="red">#ffff0000</color>
+
+
+    <color name="menu_text_color">#0febff</color>
+
+    <color name="menu_text_select_color">#0cff2a</color>
+
+    <color name="login_item_color">#ffaee3ff</color>
+
+    <color name="text_color_no_click">#6649b1ba</color>
+
+    <color name="night_mode_text_color">#0085f8</color>
+
+    <color name="progress_bar_gradient_color_start">#00c5fe</color>
+    <color name="progress_bar_gradient_color_center">#1facfb</color>
+    <color name="progress_bar_gradient_color_end">#0080f7</color>
+    <color name="progress_bar_bg_color">#0d1d4a</color>
+    <color name="progress_bar_bg_color2">#000000</color>
+    <color name="progress_bar_text_color">#ffffff</color>
+
+    <color name="loading_text_color">#ff3ec0f6</color>
+
+    <color name="sip_hangup_color">#ff3e3e</color>
+
+    <color name="high_text_color">#ffffffff</color>
+
+    <color name="medium_text_color">#ffbc42</color>
+
+    <color name="chan_text_complete">#57fe5c</color>
+
+    <color name="voice_add_start_color">#feff90</color>
+    <color name="voice_add_end_color">#ffbc42</color>
+
+    <color name="voice_less_start_color">#71f1ff</color>
+    <color name="voice_less_end_color">#1e83ff</color>
+
+    <color name="modify_ip_color_bg">#ff020814</color>
+
+    <color name="color_v_bar_small">#43abff</color>
+    <color name="color_v_no_select">#1b3b8d</color>
+</resources>

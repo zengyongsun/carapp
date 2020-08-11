@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/icon_bg"
+    tools:context=".screentest.ScreenTestActivity">
+
+    <RelativeLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_50"
+        android:layout_marginLeft="@dimen/qb_px_63"
+        android:layout_marginTop="@dimen/qb_px_10"
+        android:layout_marginRight="@dimen/qb_px_52"
+        android:background="@mipmap/settings_imp_top"
+        android:gravity="center_vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@+id/ivHeader"
+            android:layout_alignBottom="@+id/ivHeader"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/qb_px_15"
+            android:gravity="center"
+            android:padding="@dimen/qb_px_10"
+            android:text="@string/top_back_desc"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/text_size_one" />
+
+
+        <TextView
+            android:id="@+id/topTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="屏幕测试"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/qb_px_30" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/color"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_80"
+        android:layout_marginTop="@dimen/qb_px_20"
+        android:background="@drawable/select_login_bt"
+        android:gravity="center"
+        android:text="屏幕颜色测试"
+        android:textColor="@color/medium_text_color"
+        android:textSize="17sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topLayout" />
+
+
+    <TextView
+        android:id="@+id/touch"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_80"
+        android:layout_marginTop="@dimen/qb_px_10"
+        android:background="@drawable/select_login_bt"
+        android:gravity="center"
+        android:text="屏幕触摸测试"
+        android:textColor="@color/medium_text_color"
+        android:textSize="17sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/color" />
+
+
+</android.support.constraint.ConstraintLayout>

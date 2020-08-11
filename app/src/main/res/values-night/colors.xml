@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#0B336C</color>
+    <color name="colorPrimaryDark">#49443b</color>
+    <color name="colorAccent">#CDCDCD</color>
+
+    <color name="white">#DEFFFFFF</color>
+    <color name="bg_white">#FFFFFF</color>
+
+    <color name="text_progress_white">#80c1fff7</color>
+
+    <color name="red">#80ff0000</color>
+
+    <color name="menu_text_color">#49b1ba</color>
+    <color name="menu_text_select_color">#59d969</color>
+    <color name="login_item_color">#80aee3ff</color>
+    <color name="text_color_no_click">#6649b1ba</color>
+
+
+    <color name="loading_text_color">#993ec0f6</color>
+
+    <color name="progress_bar_gradient_color_start">#9900c5fe</color>
+    <color name="progress_bar_gradient_color_end">#990080f7</color>
+    <color name="progress_bar_bg_color">#990d1d4a</color>
+    <color name="progress_bar_text_color">#99ffffff</color>
+
+        <color name="progress_bar_bg_color2">#99000000</color>
+
+    <color name="night_mode_text_color">#bf9343</color>
+
+    <color name="chan_text_complete">#59d969</color>
+
+    <color name="sip_hangup_color">#99ff3e3e</color>
+
+    <color name="high_text_color">#99ffffff</color>
+    <color name="medium_text_color">#bf9343</color>
+
+    <color name="modify_ip_color_bg">#f2020814</color>
+</resources>

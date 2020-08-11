@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/icon_bg">
+
+    <ImageView
+        android:id="@+id/picBg"
+        android:layout_width="@dimen/qb_px_145"
+        android:layout_height="@dimen/qb_px_146"
+        android:layout_marginTop="@dimen/qb_px_80"
+        android:src="@mipmap/sip_pic_bg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivPic"
+        android:layout_width="@dimen/qb_px_130"
+        android:layout_height="@dimen/qb_px_131"
+        android:src="@mipmap/sip_pic"
+        app:layout_constraintBottom_toBottomOf="@+id/picBg"
+        app:layout_constraintLeft_toLeftOf="@+id/picBg"
+        app:layout_constraintRight_toRightOf="@+id/picBg"
+        app:layout_constraintTop_toTopOf="@+id/picBg" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_px_15"
+        android:text="@string/sip_call_name"
+        android:textColor="@color/high_text_color"
+        android:textSize="@dimen/qb_px_54"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/picBg" />
+
+    <TextView
+        android:id="@+id/tvNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_px_20"
+        android:text="（1101）"
+        android:textColor="@color/high_text_color"
+        android:textSize="@dimen/qb_px_27"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/sip_call_loading"
+        android:textColor="@color/menu_text_select_color"
+        android:textSize="@dimen/qb_px_27"
+        app:layout_constraintBottom_toTopOf="@+id/terminate_call"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNumber" />
+
+
+    <Button
+        android:id="@+id/terminate_call"
+        android:layout_width="@dimen/qb_px_293"
+        android:layout_height="@dimen/qb_px_63"
+        android:layout_marginLeft="@dimen/qb_px_103"
+        android:layout_marginRight="@dimen/qb_px_103"
+        android:layout_marginBottom="@dimen/qb_px_37"
+        android:background="@drawable/select_sip_hangup_bt"
+        android:gravity="center"
+        android:text="@string/sip_hang_up"
+        android:textAllCaps="false"
+        android:textColor="@color/sip_hangup_color"
+        android:textSize="@dimen/qb_px_31"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTime" />
+
+
+    <com.dimine.cardcar.view.VerticalSeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="@dimen/qb_px_65"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/qb_px_80"
+        android:layout_marginRight="@dimen/qb_px_66"
+        android:layout_marginBottom="@dimen/qb_px_26"
+        android:max="100"
+        android:maxHeight="@dimen/qb_px_42"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:progress="50"
+        android:progressDrawable="@drawable/seek_bar_bg_v"
+        android:thumb="@drawable/seek_bar_thumb_v"
+        app:layout_constraintBottom_toTopOf="@+id/tvVoiceDesc"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvVoiceDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/qb_px_38"
+        android:text="@string/sip_voice_desc"
+        android:textColor="@color/voice_less_end_color"
+        android:textSize="@dimen/qb_px_30"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/seekBar"
+        app:layout_constraintRight_toRightOf="@+id/seekBar" />
+
+</android.support.constraint.ConstraintLayout>

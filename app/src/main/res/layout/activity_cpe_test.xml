@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/icon_bg"
+    tools:context=".domain.advance.CpeTestActivity">
+
+    <LinearLayout
+        android:id="@+id/inputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        app:layout_constraintBottom_toTopOf="@+id/webView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btBack"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/qb_px_60"
+            android:background="@null"
+            android:text="返回"
+            android:textColor="@color/white" />
+
+        <EditText
+            android:id="@+id/inputAddress"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="192.168.8.254"
+            android:textSize="@dimen/qb_px_24" />
+
+        <Button
+            android:id="@+id/btExecute"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/qb_px_60"
+            android:background="@null"
+            android:text="确定"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="@dimen/qb_px_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputLayout" />
+
+    <TextView
+        android:id="@+id/loadProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/webView"
+        app:layout_constraintLeft_toLeftOf="@+id/webView"
+        app:layout_constraintRight_toRightOf="@+id/webView"
+        app:layout_constraintTop_toTopOf="@+id/webView" />
+</android.support.constraint.ConstraintLayout>

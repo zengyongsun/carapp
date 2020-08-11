@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/qb_px_150"
+    android:layout_height="match_parent"
+    android:background="@mipmap/icon_menu_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/layoutOne"
+        android:layout_marginTop="@dimen/qb_px_20"
+        style="@style/bottom_action_Layout">
+
+        <ImageView
+            android:id="@+id/ivOne"
+            style="@style/bottom_action_image"
+            android:src="@mipmap/icon_status" />
+
+        <TextView
+            android:id="@+id/tvOne"
+            style="@style/bottom_action_text"
+            android:text="@string/menu_schedule" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/lineOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/icon_menu_line" />
+
+    <LinearLayout
+        android:id="@+id/layoutTwo"
+        style="@style/bottom_action_Layout">
+
+        <ImageView
+            android:id="@+id/ivTwo"
+            style="@style/bottom_action_image"
+            android:src="@mipmap/icon_map" />
+
+        <TextView
+            android:id="@+id/tvTwo"
+            style="@style/bottom_action_text"
+            android:text="@string/menu_map" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/icon_menu_line" />
+
+    <LinearLayout
+        android:id="@+id/layoutThree"
+        style="@style/bottom_action_Layout">
+
+        <ImageView
+            android:id="@+id/ivThree"
+            style="@style/bottom_action_image"
+            android:src="@mipmap/icon_guzhang" />
+
+        <TextView
+            android:id="@+id/tvThree"
+            style="@style/bottom_action_text"
+            android:text="@string/menu_fault" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/icon_menu_line" />
+
+    <LinearLayout
+        android:id="@+id/layoutFour"
+        style="@style/bottom_action_Layout">
+
+        <ImageView
+            android:id="@+id/ivFour"
+            style="@style/bottom_action_image"
+            android:src="@mipmap/icon_statistics" />
+
+        <TextView
+            android:id="@+id/tvFour"
+            style="@style/bottom_action_text"
+            android:text="@string/menu_statistics" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/icon_menu_line" />
+
+    <LinearLayout
+        android:id="@+id/layoutFive"
+        style="@style/bottom_action_Layout">
+
+        <ImageView
+            android:id="@+id/ivFive"
+            style="@style/bottom_action_image"
+            android:src="@mipmap/icon_settings" />
+
+        <TextView
+            android:id="@+id/tvFive"
+            style="@style/bottom_action_text"
+            android:text="@string/menu_settings" />
+
+    </LinearLayout>
+
+</LinearLayout>

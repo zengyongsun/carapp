@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">vehicle terminal</string>
+
+    <string name="top_back_desc">back</string>
+    <string name="app_top_title">Open-pit mine intelligent dispatching system end</string>
+   <string name="chan_app_top_title">露天矿智能调度装载终端</string>
+
+    <string name="login_user_account_hint">please enter your account</string>
+    <string name="login_login_bt">Sign in</string>
+    <string name="login_left_top_des">Hello! please sign in</string>
+    <string name="login_password">password：</string>
+
+    <!--  主菜单  -->
+    <string name="menu_schedule">Dispatch</string>
+    <string name="menu_map">Map</string>
+    <string name="menu_fault">Malfunction</string>
+    <string name="menu_statistics">Statistical</string>
+    <string name="menu_settings">Settings</string>
+
+    <!--  设置相关  -->
+    <string name="setting_first">Factory settings</string>
+    <string name="setting_three">User settings</string>
+    <string name="setting_title">Settings</string>
+    <string name="setting_voice">Volume setting</string>
+    <string name="settings_voice_desc">volume</string>
+    <string name="settings_storage_des">AvailableSpace/TotalSpace</string>
+    <string name="settings_memory_desc">AvailableRunMemory/TotalMemory</string>
+    <string name="settings_version_desc">Version</string>
+    <string name="settings_fragment_title">Settings and status</string>
+    <string name="top_setting_desc">Settings</string>
+    <string name="settings_network_args">Network parameters</string>
+    <string name="device_number_desc">Terminal number</string>
+    <string name="uhf_card_desc">UHF card number</string>
+    <string name="settings_local_ip">Local address：</string>
+    <string name="settings_local_port">Device port：</string>
+    <string name="settings_local_mask">Subnet mask：</string>
+    <string name="settings_local_gateway">Default gateway：</string>
+    <string name="settings_service_ip">Server address：</string>
+    <string name="settings_service_port">Server port：</string>
+    <string name="sip_setting_service_number">Server phone number：</string>
+    <string name="settings_device_remark">Terminal notes：</string>
+    <string name="settings_device_title">Terminal title：</string>
+    <string name="settings_night_mode">Night mode</string>
+    <string name="settings_day_mode">Day mode</string>
+    <string name="settings_default_value">Configuration information</string>
+
+    <string name="tools_text">Content display</string>
+
+    <!--  消息提示  -->
+    <string name="error_configuration">please configure the serial port first</string>
+    <string name="error_unknown">unable to open serial port for unknown reasons</string>
+    <string name="error_password_no_match">wrong password</string>
+    <string name="error_user_id_not_empty">account cannot be empty</string>
+    <string name="error_login_failure">login failed ,please check the network.</string>
+    <string name="error_network">network error ,check it</string>
+    <string name="hint_login_ok">login successful!</string>
+    <string name="hint_over_speed">You are speeding, drive safely!</string>
+    <string name="hint_modify_ok">successfully modified</string>
+    <string name="hint_modify_failure">fail to edit</string>
+
+
+    <!--  sip界面  -->
+    <string name="sip_voice_desc">volume</string>
+    <string name="sip_call_loading">Calling. . .</string>
+    <string name="sip_hang_up">hang up</string>
+    <string name="sip_call_name">controller</string>
+    <string name="sip_setting_title">SIP settings</string>
+    <string name="sip_username_desc">UserName：</string>
+    <string name="sip_password_desc">Password：</string>
+    <string name="sip_domain_desc">Domain：</string>
+    <string name="sip_connect_bt">connection</string>
+    <string name="sip_cancel_bt">cancel</string>
+    <string name="sip_answer_desc">answer</string>
+
+    <!--  对话框  -->
+    <string name="dialog_password_desc">password：</string>
+    <string name="dialog_two_setting_title">Implementation settings</string>
+    <string name="dialog_one_setting_title">Factory settings</string>
+    <string name="dialog_button_cancel">cancel</string>
+    <string name="dialog_button_confirm">confirm</string>
+    <string name="dialog_high_setting_title">advanced settings</string>
+    <string name="dialog_card_title">Card number configuration</string>
+    <string name="dialog_card_desc">card number：</string>
+    <string name="dialog_voic_count">Voice broadcast times：</string>
+
+    <string name="hint_out_message">Are you sure you want to log out？</string>
+    <string name="hint_no_network">unable to get network</string>
+    <string name="hint_message">information</string>
+    <string name="hint_unable_empty">Can not be empty</string>
+    <string name="hint_six_count">Please enter 6 digits</string>
+    <string name="hint_first_no_match">The first digit must be 1 or 2, 1 for forklift terminal, 2 for truck terminal</string>
+    <string name="hint_title_length_count">title cannot exceed 12 words</string>
+    <string name="text_loading">loading。。。</string>
+    <string name="hint_input_ip">please enter the correct ip</string>
+    <string name="hint_port_not_empty">port number cannot be empty</string>
+    <string name="error_open_serial_port">failed to open serial port！</string>
+
+
+    <string name="test_voice_message">Hello</string>
+
+
+    <!--  调度相关  -->
+    <string name="schedule_desc">work tasks</string>
+    <string name="real_time_information">real time information</string>
+    <string name="call_bt">Call</string>
+    <string name="ka_empty_run_desc">no load(hour)</string>
+    <string name="ka_full_run_desc">full load(hour)</string>
+    <string name="ka_run_amount_desc">capacity(car)</string>
+    <string name="chan_plan_amount_desc">planned amount(car)</string>
+    <string name="chan_complete_desc">completion(car)</string>
+    <string name="chan_work_time_desc">loading time(hour)</string>
+    <string name="schedule_before_desc">please go</string>
+
+    <!--  地图相关  -->
+    <string name="map_real_speed_desc">Real-time speed</string>
+    <string name="map_max_speed_desc">Maximum speed</string>
+
+
+    <!--  统计相关  -->
+    <string name="statistics_chan_zhuang_point">Loading point</string>
+    <string name="statistical_chan_plan">plan</string>
+    <string name="statistical_chan_complete">complete</string>
+    <string name="statistical_chan_title">Forklift Statistics</string>
+    <string name="statistical_chan_amount">Shovel(car)</string>
+    <string name="statistical_ka_unloading_point">Unload point</string>
+    <string name="statistical_ka_loading_point">Loading point</string>
+    <string name="statistical_ka_traffic">Capacity(car)</string>
+
+    <!--  故障相关  -->
+    <string name="fault_stop">Stop</string>
+    <string name="fault_bulb">Light bulb</string>
+    <string name="fault_engine_oil">Engine oil</string>
+    <string name="fault_fuel_oil">Fuel</string>
+    <string name="fault_temperature">Temperature</string>
+    <string name="fault_electric_power">Electric power</string>
+    <string name="fault_tire_pressure">Tire pressure</string>
+    <string name="fault_others">Other</string>
+    <string name="fault_engine">Engine</string>
+    <string name="fault_send_ok">Failure sending ok！</string>
+    <string name="fault_send_desc">Fault</string>
+
+
+    <string name="good_in_the_morning">凌晨好!</string>
+    <string name="good_morning">上午好!</string>
+    <string name="good_afternoon">中午好!</string>
+    <string name="int_the_afternoon">下午好!</string>
+    <string name="good_evening">晚上好!</string>
+
+</resources>

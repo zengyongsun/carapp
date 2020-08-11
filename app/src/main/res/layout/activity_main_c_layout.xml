@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/icon_bg"
+    tools:context=".domain.mainactivity.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_50"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@mipmap/icon_head_bg"
+        android:gravity="center_vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/ivHeader"
+            android:layout_width="@dimen/qb_px_36"
+            android:layout_height="@dimen/qb_px_36"
+            android:layout_marginLeft="@dimen/qb_px_24"
+            android:background="@mipmap/icon_header_bg"
+            android:scaleType="center"
+            android:src="@mipmap/icon_header" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/ivHeader"
+            android:layout_alignBottom="@+id/ivHeader"
+            android:layout_gravity="center_vertical"
+            android:layout_toRightOf="@+id/ivHeader"
+            android:gravity="center"
+            android:text="上午好！张三"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/qb_px_20" />
+
+
+        <TextView
+            android:id="@+id/tvHeaderDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/app_top_title"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/qb_px_30" />
+
+
+        <ImageView
+            android:id="@+id/ivTransfer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_toLeftOf="@+id/led"
+            tools:src="@mipmap/icon_connect_no" />
+
+        <ImageView
+            android:id="@+id/led"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_toLeftOf="@+id/ivGPS"
+            tools:src="@mipmap/icon_sip_no" />
+
+        <com.dimine.cardcar.view.GpsImageView
+            android:id="@+id/ivGPS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_toLeftOf="@+id/ivWifi"
+            android:gravity="center"
+            android:src="@mipmap/icon_gps_no" />
+
+
+        <com.dimine.cardcar.view.SignalImageView
+            android:id="@+id/ivWifi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/qb_px_24"
+            tools:src="@mipmap/icon_4g_no" />
+
+
+    </RelativeLayout>
+
+
+    <FrameLayout
+        android:id="@+id/contentLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/timeView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topLayout"
+        app:layout_constraintVertical_bias="1.0">
+
+    </FrameLayout>
+
+    <View
+        android:id="@+id/bottomLine"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/qb_px_20"
+        android:layout_marginLeft="@dimen/qb_px_26"
+        android:layout_marginRight="@dimen/qb_px_24"
+        android:layout_marginBottom="@dimen/qb_px_24"
+        android:background="@mipmap/icon_time_line"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contentLayout" />
+
+
+    <com.dimine.cardcar.view.TimeView
+        android:id="@+id/timeView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/qb_px_24"
+        android:layout_marginBottom="@dimen/qb_px_2"
+        android:textColor="@color/menu_text_color"
+        android:textSize="@dimen/text_size_three"
+        app:haveSecond="1"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomLine"
+        app:layout_constraintRight_toRightOf="@+id/bottomLine" />
+
+    <Button
+        android:id="@+id/btCall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="呼叫"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>

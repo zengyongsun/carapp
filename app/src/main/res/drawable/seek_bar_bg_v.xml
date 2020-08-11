@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--3个层的顺序即为显示时的叠加顺序-->
+    <!--背景色-->
+    <item android:id="@android:id/background">
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/qb_px_21" />
+            <size android:height="@dimen/qb_px_12" />
+            <solid android:color="@color/color_v_no_select" />
+        </shape>
+    </item>
+
+    <!--一级进度条的颜色，也可以直接替换成图片-->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape
+                android:shape="rectangle"
+                android:useLevel="true">
+                <corners android:radius="@dimen/qb_px_21" />
+                <size android:height="@dimen/qb_px_12" />
+                <!-- 调整angle实现水平渐变，垂直渐变或者对角渐变 -->
+                <gradient
+                    android:angle="0"
+                    android:centerColor="@color/progress_bar_gradient_color_center"
+                    android:centerX="0.5"
+                    android:centerY="0.5"
+                    android:endColor="@color/progress_bar_gradient_color_end"
+                    android:startColor="@color/progress_bar_gradient_color_start"
+                    android:type="linear" />
+            </shape>
+        </clip>
+
+    </item>
+
+</layer-list>

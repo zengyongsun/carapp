@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/qb_px_102"
+    android:layout_height="@dimen/qb_px_130"
+    android:layout_marginRight="@dimen/qb_px_40"
+    android:layout_marginBottom="@dimen/qb_px_60">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/allLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@mipmap/fault_no_bg">
+
+        <ImageView
+            android:id="@+id/tvFaultImg"
+            android:layout_width="@dimen/qb_px_70"
+            android:layout_height="@dimen/qb_px_70"
+            android:layout_marginTop="@dimen/qb_px_18"
+            android:background="@mipmap/fault_img_no_bg"
+            android:scaleType="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@mipmap/stop_no" />
+
+        <TextView
+            android:id="@+id/tvDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/qb_px_6"
+            android:text="停摆"
+            android:textSize="@dimen/text_size_three"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvFaultImg" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <ToggleButton
+        android:id="@+id/tb"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:text=""
+        android:textOff=""
+        android:textOn=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

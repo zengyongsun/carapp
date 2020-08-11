@@ -1,0 +1,149 @@
+<resources>
+    <string name="app_name">车载终端</string>
+
+    <string name="top_back_desc">返回</string>
+    <string name="app_top_title">露天矿智能调度卡车终端</string>
+    <string name="chan_app_top_title">露天矿智能调度装载终端</string>
+
+    <string name="login_user_account_hint">请输入帐号</string>
+    <string name="login_login_bt">登录</string>
+    <string name="login_left_top_des">您好！请登录</string>
+    <string name="login_password">密码：</string>
+
+    <!--  主菜单  -->
+    <string name="menu_schedule">调度</string>
+    <string name="menu_map">地图</string>
+    <string name="menu_fault">故障</string>
+    <string name="menu_statistics">统计</string>
+    <string name="menu_settings">设置</string>
+
+    <!--  设置相关  -->
+    <string name="setting_first">出厂设置</string>
+    <string name="setting_three">用户设置</string>
+    <string name="setting_title">设置</string>
+    <string name="setting_voice">音量设置</string>
+    <string name="settings_voice_desc">音量</string>
+    <string name="settings_storage_des">可用空间/总空间</string>
+    <string name="settings_memory_desc">可用运行内存/总内存</string>
+    <string name="settings_version_desc">版本号</string>
+    <string name="settings_fragment_title">设置与状态</string>
+    <string name="top_setting_desc">设 置</string>
+    <string name="settings_network_args">网络参数</string>
+    <string name="device_number_desc">终端编号</string>
+    <string name="uhf_card_desc">UHF卡号</string>
+    <string name="settings_local_ip">本机地址：</string>
+    <string name="settings_local_port">设备端口：</string>
+    <string name="settings_local_mask">子网掩码：</string>
+    <string name="settings_local_gateway">默认网关：</string>
+    <string name="settings_service_ip">服务器地址：</string>
+    <string name="settings_service_port">服务器端口：</string>
+    <string name="sip_setting_service_number">服务器号码：</string>
+    <string name="settings_device_remark">终端备注：</string>
+    <string name="settings_device_title">终端标题：</string>
+    <string name="settings_night_mode">夜间模式</string>
+    <string name="settings_day_mode">日间模式</string>
+    <string name="settings_default_value">配置信息</string>
+
+    <string name="tools_text">内容显示</string>
+
+    <!--  消息提示  -->
+    <string name="error_configuration">请先配置串口</string>
+    <string name="error_unknown">由于未知原因无法打开串口</string>
+    <string name="error_password_no_match">密码错误</string>
+    <string name="error_user_id_not_empty">帐号不能为空</string>
+    <string name="error_login_failure">登录失败，请检查网络。</string>
+    <string name="error_network">网络错误，请检查网络</string>
+    <string name="hint_login_ok">登录成功！</string>
+    <string name="hint_over_speed">您已超速，请安全驾驶！</string>
+    <string name="hint_modify_ok">修改成功</string>
+    <string name="hint_modify_failure">修改失败</string>
+
+
+    <!--  sip界面  -->
+    <string name="sip_voice_desc">音量</string>
+    <string name="sip_call_loading">呼叫中。。。</string>
+    <string name="sip_hang_up">挂 断</string>
+    <string name="sip_call_name">调度员</string>
+    <string name="sip_setting_title">SIP设置</string>
+    <string name="sip_username_desc">用户名：</string>
+    <string name="sip_password_desc">密码：</string>
+    <string name="sip_domain_desc">域名：</string>
+    <string name="sip_connect_bt">连接</string>
+    <string name="sip_cancel_bt">取消</string>
+    <string name="sip_answer_desc">接 听</string>
+
+    <!--  对话框  -->
+    <string name="dialog_password_desc">密码：</string>
+    <string name="dialog_two_setting_title">实施设置</string>
+    <string name="dialog_one_setting_title">出厂设置</string>
+    <string name="dialog_button_cancel">取消</string>
+    <string name="dialog_button_confirm">确认</string>
+    <string name="dialog_high_setting_title">高级设置</string>
+    <string name="dialog_card_title">卡号配置</string>
+    <string name="dialog_card_desc">卡号：</string>
+    <string name="dialog_voic_count">语音播报次数：</string>
+
+    <string name="hint_out_message">确定要退出登录？</string>
+    <string name="hint_no_network">无法获取网络</string>
+    <string name="hint_message">提示信息</string>
+    <string name="hint_unable_empty">不能为空</string>
+    <string name="hint_six_count">请输入6位数字</string>
+    <string name="hint_first_no_match">第一位必须是1或2，1代表铲车终端，2代表卡车终端</string>
+    <string name="hint_title_length_count">标题不能超过12个字</string>
+    <string name="text_loading">正在加载。。。</string>
+    <string name="hint_input_ip">请输入正确的IP</string>
+    <string name="hint_port_not_empty">端口号不能为空</string>
+    <string name="error_open_serial_port">打开串口失败！</string>
+
+
+    <string name="test_voice_message">您好</string>
+
+
+    <!--  调度相关  -->
+    <string name="schedule_desc">工作任务</string>
+    <string name="real_time_information">实时信息</string>
+    <string name="call_bt">通话</string>
+    <string name="ka_empty_run_desc">空载(小时)</string>
+    <string name="ka_full_run_desc">满载(小时)</string>
+    <string name="ka_run_amount_desc">运量(车)</string>
+    <string name="chan_plan_amount_desc">计划量(车)</string>
+    <string name="chan_complete_desc">完成量(车)</string>
+    <string name="chan_work_time_desc">装载时间(小时)</string>
+    <string name="schedule_before_desc">请到</string>
+
+    <!--  地图相关  -->
+    <string name="map_real_speed_desc">实时速度</string>
+    <string name="map_max_speed_desc">最大速度</string>
+
+
+    <!--  统计相关  -->
+    <string name="statistics_chan_zhuang_point">装矿点</string>
+    <string name="statistical_chan_plan">计划</string>
+    <string name="statistical_chan_complete">完成</string>
+    <string name="statistical_chan_title">铲车统计</string>
+    <string name="statistical_chan_amount">铲量(吨)</string>
+    <string name="statistical_ka_unloading_point">卸载点</string>
+    <string name="statistical_ka_loading_point">装载点</string>
+    <string name="statistical_ka_traffic">运量(吨)</string>
+
+    <!--  故障相关  -->
+    <string name="fault_stop">停摆</string>
+    <string name="fault_bulb">灯泡</string>
+    <string name="fault_engine_oil">机油</string>
+    <string name="fault_fuel_oil">燃油</string>
+    <string name="fault_temperature">温度</string>
+    <string name="fault_electric_power">电力</string>
+    <string name="fault_tire_pressure">胎压</string>
+    <string name="fault_others">其他</string>
+    <string name="fault_engine">发动机</string>
+    <string name="fault_send_ok">故障发送成功！</string>
+    <string name="fault_send_desc">故障</string>
+
+
+    <string name="good_in_the_morning">凌晨好!</string>
+    <string name="good_morning">上午好!</string>
+    <string name="good_afternoon">中午好!</string>
+    <string name="int_the_afternoon">下午好!</string>
+    <string name="good_evening">晚上好!</string>
+
+</resources>

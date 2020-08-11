@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/modify_ip_color_bg">
+
+    <TextView
+        android:id="@+id/dialogTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_px_12"
+        android:focusable="true"
+        android:text="@string/top_setting_desc"
+        android:textColor="@color/menu_text_color"
+        android:textSize="@dimen/qb_px_28"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/contentBg" />
+
+    <ImageView
+        android:id="@+id/contentBg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/qb_px_144"
+        android:layout_marginTop="@dimen/qb_px_48"
+        android:layout_marginRight="@dimen/qb_px_150"
+        android:scaleType="fitXY"
+        android:src="@mipmap/icon_local_ip_bg"
+        app:layout_constraintBottom_toTopOf="@+id/btLayout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tvDescIp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_74"
+        android:layout_marginTop="@dimen/qb_px_92"
+        android:gravity="center_vertical"
+        android:text="@string/settings_local_ip"
+        android:textColor="@color/menu_text_color"
+        android:textSize="@dimen/qb_px_27"
+        app:layout_constraintBottom_toTopOf="@+id/tvDescPort"
+        app:layout_constraintLeft_toLeftOf="@+id/contentBg"
+        app:layout_constraintTop_toTopOf="@+id/contentBg" />
+
+    <LinearLayout
+        android:id="@+id/ipLayout"
+        android:layout_width="@dimen/qb_px_430"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_24"
+        android:layout_marginRight="@dimen/qb_px_80"
+        android:background="@mipmap/icon_ip_long"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDescIp"
+        app:layout_constraintLeft_toRightOf="@+id/tvDescIp"
+        app:layout_constraintRight_toRightOf="@+id/contentBg"
+        app:layout_constraintTop_toTopOf="@+id/tvDescIp">
+
+        <EditText
+            android:id="@+id/etIpOne"
+            android:layout_width="@dimen/qb_px_100"
+            android:layout_height="@dimen/qb_px_44"
+            android:background="@null"
+            android:gravity="center"
+            android:inputType="number"
+            android:singleLine="true"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/qb_px_27"
+            tools:text="192" />
+
+        <View
+            android:layout_width="@dimen/qb_px_10"
+            android:layout_height="@dimen/qb_px_10"
+            android:layout_gravity="bottom"
+            android:background="@mipmap/icon_ip_point" />
+
+        <EditText
+            android:id="@+id/etIpTwo"
+            android:layout_width="@dimen/qb_px_100"
+            android:layout_height="@dimen/qb_px_44"
+            android:background="@null"
+            android:gravity="center"
+            android:inputType="number"
+            android:singleLine="true"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/qb_px_27"
+            tools:text="192" />
+
+        <View
+            android:layout_width="@dimen/qb_px_10"
+            android:layout_height="@dimen/qb_px_10"
+            android:layout_gravity="bottom"
+            android:background="@mipmap/icon_ip_point" />
+
+        <EditText
+            android:id="@+id/etIpThree"
+            android:layout_width="@dimen/qb_px_100"
+            android:layout_height="@dimen/qb_px_44"
+            android:background="@null"
+            android:gravity="center"
+            android:inputType="number"
+            android:singleLine="true"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/qb_px_27"
+            tools:text="192" />
+
+        <View
+            android:layout_width="@dimen/qb_px_10"
+            android:layout_height="@dimen/qb_px_10"
+            android:layout_gravity="bottom"
+            android:background="@mipmap/icon_ip_point" />
+
+        <EditText
+            android:id="@+id/etIpFour"
+            android:layout_width="@dimen/qb_px_100"
+            android:layout_height="@dimen/qb_px_44"
+            android:background="@null"
+            android:gravity="center"
+            android:inputType="number"
+            android:singleLine="true"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/qb_px_27"
+            tools:text="192" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvDescPort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_74"
+        android:layout_marginTop="@dimen/qb_px_44"
+        android:gravity="center_vertical"
+        android:text="@string/settings_local_port"
+        android:textColor="@color/menu_text_color"
+        android:textSize="@dimen/qb_px_27"
+        app:layout_constraintBottom_toTopOf="@+id/tvDescMask"
+        app:layout_constraintLeft_toLeftOf="@+id/contentBg"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescIp" />
+
+    <LinearLayout
+        android:id="@+id/portLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/icon_ip_short"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDescPort"
+        app:layout_constraintLeft_toLeftOf="@+id/ipLayout"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescPort"
+        app:layout_constraintTop_toTopOf="@+id/tvDescPort">
+
+        <EditText
+            android:id="@+id/etPort"
+            android:layout_width="@dimen/qb_px_105"
+            android:layout_height="@dimen/qb_px_44"
+            android:background="@null"
+            android:gravity="center"
+            android:inputType="number"
+            android:singleLine="true"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/qb_px_27"
+            tools:text="5672" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tvDescMask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_74"
+        android:layout_marginTop="@dimen/qb_px_44"
+        android:gravity="center_vertical"
+        android:text="@string/settings_local_mask"
+        android:textColor="@color/menu_text_color"
+        android:textSize="@dimen/qb_px_27"
+        app:layout_constraintBottom_toTopOf="@+id/tvDescGateway"
+        app:layout_constraintLeft_toLeftOf="@+id/contentBg"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescPort" />
+
+    <LinearLayout
+        android:id="@+id/maskLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/qb_px_80"
+        android:background="@mipmap/icon_ip_long"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDescMask"
+        app:layout_constraintLeft_toLeftOf="@+id/ipLayout"
+        app:layout_constraintRight_toRightOf="@+id/contentBg"
+        app:layout_constraintTop_toTopOf="@+id/tvDescMask">
+
+        <EditText
+            android:id="@+id/etMaskOne"
+            android:layout_width="@dimen/qb_px_100"
+            android:layout_height="@dimen/qb_px_44"
+            android:background="@null"
+            android:gravity="center"
+            android:inputType="number"
+            android:singleLine="true"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/qb_px_27"
+            tools:text="192" />
+
+        <View
+            android:layout_width="@dimen/qb_px_10"
+            android:layout_height="@dimen/qb_px_10"
+            android:layout_gravity="bottom"
+            android:background="@mipmap/icon_ip_point" />
+
+        <EditText
+            android:id="@+id/etMaskTwo"
+            android:layout_width="@dimen/qb_px_100"
+            android:layout_height="@dimen/qb_px_44"
+            android:background="@null"
+            android:gravity="center"
+            android:inputType="number"
+            android:singleLine="true"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/qb_px_27"
+            tools:text="192" />
+
+        <View
+            android:layout_width="@dimen/qb_px_10"
+            android:layout_height="@dimen/qb_px_10"
+            android:layout_gravity="bottom"
+            android:background="@mipmap/icon_ip_point" />
+
+        <EditText
+            android:id="@+id/etMaskThree"
+            android:layout_width="@dimen/qb_px_100"
+            android:layout_height="@dimen/qb_px_44"
+            android:background="@null"
+            android:gravity="center"
+            android:inputType="number"
+            android:singleLine="true"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/qb_px_27"
+            tools:text="192" />
+
+        <View
+            android:layout_width="@dimen/qb_px_10"
+            android:layout_height="@dimen/qb_px_10"
+            android:layout_gravity="bottom"
+            android:background="@mipmap/icon_ip_point" />
+
+        <EditText
+            android:id="@+id/etMaskFour"
+            android:layout_width="@dimen/qb_px_100"
+            android:layout_height="@dimen/qb_px_44"
+            android:background="@null"
+            android:gravity="center"
+            android:inputType="number"
+            android:singleLine="true"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/qb_px_27"
+            tools:text="192" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvDescGateway"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_74"
+        android:layout_marginTop="@dimen/qb_px_44"
+        android:layout_marginBottom="@dimen/qb_px_50"
+        android:gravity="center_vertical"
+        android:text="@string/settings_local_gateway"
+        android:textColor="@color/menu_text_color"
+        android:textSize="@dimen/qb_px_27"
+        app:layout_constraintBottom_toBottomOf="@+id/contentBg"
+        app:layout_constraintLeft_toLeftOf="@+id/contentBg"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescMask" />
+
+    <LinearLayout
+        android:id="@+id/gatewayLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/qb_px_80"
+        android:background="@mipmap/icon_ip_long"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDescGateway"
+        app:layout_constraintLeft_toLeftOf="@+id/ipLayout"
+        app:layout_constraintRight_toRightOf="@+id/contentBg"
+        app:layout_constraintTop_toTopOf="@+id/tvDescGateway">
+
+        <EditText
+            android:id="@+id/etGatewayOne"
+            android:layout_width="@dimen/qb_px_100"
+            android:layout_height="@dimen/qb_px_44"
+            android:background="@null"
+            android:gravity="center"
+            android:inputType="number"
+            android:singleLine="true"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/qb_px_27"
+            tools:text="192" />
+
+        <View
+            android:layout_width="@dimen/qb_px_10"
+            android:layout_height="@dimen/qb_px_10"
+            android:layout_gravity="bottom"
+            android:background="@mipmap/icon_ip_point" />
+
+        <EditText
+            android:id="@+id/etGatewayTwo"
+            android:layout_width="@dimen/qb_px_100"
+            android:layout_height="@dimen/qb_px_44"
+            android:background="@null"
+            android:gravity="center"
+            android:inputType="number"
+            android:singleLine="true"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/qb_px_27"
+            tools:text="192" />
+
+        <View
+            android:layout_width="@dimen/qb_px_10"
+            android:layout_height="@dimen/qb_px_10"
+            android:layout_gravity="bottom"
+            android:background="@mipmap/icon_ip_point" />
+
+        <EditText
+            android:id="@+id/etGatewayThree"
+            android:layout_width="@dimen/qb_px_100"
+            android:layout_height="@dimen/qb_px_44"
+            android:background="@null"
+            android:gravity="center"
+            android:inputType="number"
+            android:singleLine="true"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/qb_px_27"
+            tools:text="192" />
+
+        <View
+            android:layout_width="@dimen/qb_px_10"
+            android:layout_height="@dimen/qb_px_10"
+            android:layout_gravity="bottom"
+            android:background="@mipmap/icon_ip_point" />
+
+        <EditText
+            android:id="@+id/etGatewayFour"
+            android:layout_width="@dimen/qb_px_100"
+            android:layout_height="@dimen/qb_px_44"
+            android:background="@null"
+            android:gravity="center"
+            android:inputType="number"
+            android:singleLine="true"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/qb_px_27"
+            tools:text="192" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/btLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_px_30"
+        android:layout_marginBottom="@dimen/qb_px_52"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contentBg">
+
+        <Button
+            android:id="@+id/btConfirm"
+            android:layout_width="@dimen/qb_px_120"
+            android:layout_height="@dimen/qb_px_48"
+            android:background="@drawable/select_dialog_confirm"
+            android:text="@string/dialog_button_confirm"
+            android:textAllCaps="false"
+            android:textColor="@color/menu_text_select_color" />
+
+        <Button
+            android:id="@+id/btCancel"
+            android:layout_width="@dimen/qb_px_120"
+            android:layout_height="@dimen/qb_px_48"
+            android:layout_marginLeft="@dimen/qb_px_64"
+            android:background="@drawable/select_dialog_cancel"
+            android:text="@string/dialog_button_cancel"
+            android:textAllCaps="false"
+            android:textColor="@color/menu_text_color" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

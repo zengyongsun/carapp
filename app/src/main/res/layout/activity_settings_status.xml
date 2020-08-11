@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/icon_bg"
+    tools:context=".domain.SettingsStatusActivity">
+
+    <RelativeLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:padding="5dp"
+            android:src="@mipmap/icon_back" />
+
+        <TextView
+            android:id="@+id/topTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/setting_three"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/qb_px_28" />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/tvVoiceDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_62"
+        android:layout_marginTop="@dimen/qb_px_135"
+        android:text="@string/setting_voice"
+        android:textColor="@color/menu_text_color"
+        android:textSize="@dimen/text_size_two"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    要使进度条-->
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_58"
+        android:layout_marginRight="@dimen/qb_px_52"
+        android:max="100"
+        android:maxHeight="@dimen/qb_px_12"
+        android:minHeight="@dimen/qb_px_12"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:progress="50"
+        android:progressDrawable="@drawable/seek_bar_bg"
+        android:thumb="@drawable/seek_bar_thumb"
+        app:layout_constraintBottom_toBottomOf="@+id/tvVoiceDesc"
+        app:layout_constraintLeft_toRightOf="@+id/tvVoiceDesc"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvVoiceDesc" />
+
+    <LinearLayout
+        android:id="@+id/llVoiceLess"
+        android:layout_width="@dimen/qb_px_103"
+        android:layout_height="@dimen/qb_px_43"
+        android:layout_marginTop="@dimen/qb_px_25"
+        android:background="@drawable/select_voice_less_bg"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="@+id/seekBar"
+        app:layout_constraintTop_toBottomOf="@+id/tvVoiceDesc">
+
+        <TextView
+            android:id="@+id/tvLess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_voice_desc"
+            android:textSize="@dimen/text_size_one" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/qb_px_8"
+            android:src="@mipmap/settings_voice_less" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvVoiceNumber"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/qb_px_43"
+        android:layout_marginLeft="@dimen/qb_px_20"
+        android:layout_marginTop="@dimen/qb_px_25"
+        android:layout_marginRight="@dimen/qb_px_20"
+        android:background="@mipmap/settings_number_bg"
+        android:gravity="center"
+        android:text="40"
+        android:textColor="@color/menu_text_color"
+        android:textSize="@dimen/text_size_one"
+        app:layout_constraintLeft_toRightOf="@+id/llVoiceLess"
+        app:layout_constraintRight_toLeftOf="@+id/llVoiceAdd"
+        app:layout_constraintTop_toBottomOf="@+id/tvVoiceDesc" />
+
+    <LinearLayout
+        android:id="@+id/llVoiceAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/qb_px_43"
+        android:layout_marginTop="@dimen/qb_px_25"
+        android:background="@drawable/select_voice_add_bg"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintRight_toRightOf="@+id/seekBar"
+        app:layout_constraintTop_toBottomOf="@+id/tvVoiceDesc">
+
+        <TextView
+            android:id="@+id/tvAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_voice_desc"
+            android:textSize="@dimen/text_size_one" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/qb_px_8"
+            android:src="@mipmap/settings_voice_add" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/storageDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_px_42"
+        android:text="@string/settings_storage_des"
+        android:textColor="@color/menu_text_color"
+        android:textSize="@dimen/text_size_two"
+        app:layout_constraintLeft_toLeftOf="@+id/tvVoiceDesc"
+        app:layout_constraintTop_toBottomOf="@+id/llVoiceLess" />
+
+    <TextView
+        android:id="@+id/tvStorage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_338"
+        android:text="12.4G/16G"
+        android:textColor="@color/menu_text_color"
+        android:textSize="@dimen/text_size_two"
+        app:layout_constraintBottom_toBottomOf="@+id/storageDesc"
+        app:layout_constraintLeft_toLeftOf="@+id/storageDesc"
+        app:layout_constraintTop_toTopOf="@+id/storageDesc" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="@dimen/qb_px_1"
+        android:layout_marginTop="@dimen/qb_px_15"
+        android:layout_marginRight="@dimen/qb_px_52"
+        android:background="@mipmap/settings_line"
+        app:layout_constraintLeft_toLeftOf="@+id/tvVoiceDesc"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvStorage" />
+
+
+    <TextView
+        android:id="@+id/memoryDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_px_31"
+        android:text="@string/settings_memory_desc"
+        android:textColor="@color/menu_text_color"
+        android:textSize="@dimen/text_size_two"
+        app:layout_constraintLeft_toLeftOf="@+id/tvVoiceDesc"
+        app:layout_constraintTop_toBottomOf="@+id/tvStorage" />
+
+    <TextView
+        android:id="@+id/tvMemory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_338"
+        android:text="1.24/2.56"
+        android:textColor="@color/menu_text_color"
+        android:textSize="@dimen/text_size_two"
+        app:layout_constraintBottom_toBottomOf="@+id/memoryDesc"
+        app:layout_constraintLeft_toLeftOf="@+id/memoryDesc"
+        app:layout_constraintTop_toTopOf="@+id/memoryDesc" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="@dimen/qb_px_1"
+        android:layout_marginTop="@dimen/qb_px_15"
+        android:layout_marginRight="@dimen/qb_px_52"
+        android:background="@mipmap/settings_line"
+        app:layout_constraintLeft_toLeftOf="@+id/tvVoiceDesc"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMemory" />
+
+    <TextView
+        android:id="@+id/versionDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_px_31"
+        android:text="@string/settings_version_desc"
+        android:textColor="@color/menu_text_color"
+        android:textSize="@dimen/text_size_two"
+        app:layout_constraintLeft_toLeftOf="@+id/tvVoiceDesc"
+        app:layout_constraintTop_toBottomOf="@+id/tvMemory" />
+
+    <TextView
+        android:id="@+id/tvVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_338"
+        android:text="1.0.0"
+        android:textColor="@color/menu_text_color"
+        android:textSize="@dimen/text_size_two"
+        app:layout_constraintBottom_toBottomOf="@+id/versionDesc"
+        app:layout_constraintLeft_toLeftOf="@+id/versionDesc"
+        app:layout_constraintTop_toTopOf="@+id/versionDesc" />
+
+
+</android.support.constraint.ConstraintLayout>

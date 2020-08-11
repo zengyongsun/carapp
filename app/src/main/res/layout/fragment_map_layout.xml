@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/qb_px_21"
+    android:layout_marginTop="@dimen/qb_px_10"
+    android:layout_marginRight="@dimen/qb_px_21"
+    android:layout_marginBottom="@dimen/qb_px_10"
+    android:background="@mipmap/map_bg"
+    android:orientation="horizontal"
+    android:padding="@dimen/qb_px_3">
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/qb_px_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/speedBg"
+        android:layout_width="@dimen/qb_px_250"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/qb_px_20"
+        android:layout_marginTop="@dimen/qb_px_20"
+        android:background="@mipmap/map_speed_bg"
+        android:paddingBottom="@dimen/qb_px_13"
+        app:layout_constraintBottom_toBottomOf="@+id/noSpeedLeft"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/speedDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_19"
+        android:layout_marginTop="@dimen/qb_px_29"
+        android:text="@string/map_real_speed_desc"
+        android:textColor="@color/high_text_color"
+        android:textSize="@dimen/qb_px_16"
+        app:layout_constraintLeft_toLeftOf="@+id/speedBg"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/medium_text_color"
+        android:textSize="@dimen/qb_px_45"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@+id/speedDesc"
+        app:layout_constraintTop_toBottomOf="@+id/speedDesc" />
+
+    <TextView
+        android:id="@+id/speedUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_10"
+        android:layout_marginBottom="@dimen/qb_px_8"
+        android:text="km/h"
+        android:textColor="@color/high_text_color"
+        android:textSize="@dimen/qb_px_16"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSpeed"
+        app:layout_constraintLeft_toRightOf="@+id/tvSpeed" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/qb_px_1"
+        android:layout_marginLeft="@dimen/qb_px_7"
+        android:layout_marginTop="@dimen/qb_px_4"
+        android:layout_marginRight="@dimen/qb_px_8"
+        android:background="@mipmap/map_speed_line"
+        app:layout_constraintLeft_toLeftOf="@+id/speedBg"
+        app:layout_constraintRight_toRightOf="@+id/speedBg"
+        app:layout_constraintTop_toBottomOf="@+id/tvSpeed" />
+
+    <TextView
+        android:id="@+id/noSpeedLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_px_10"
+        android:paddingBottom="@dimen/qb_px_13"
+        android:text="@string/map_max_speed_desc"
+        android:textColor="@color/high_text_color"
+        android:textSize="@dimen/qb_px_16"
+        app:layout_constraintLeft_toLeftOf="@+id/tvSpeed"
+        app:layout_constraintTop_toBottomOf="@+id/line" />
+
+    <TextView
+        android:id="@+id/tvNoSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_5"
+        android:layout_marginTop="@dimen/qb_px_6"
+        android:text="30"
+        android:textColor="@color/menu_text_color"
+        android:textSize="@dimen/qb_px_20"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/noSpeedLeft"
+        app:layout_constraintTop_toBottomOf="@+id/line" />
+
+    <TextView
+        android:id="@+id/noSpeedRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_5"
+        android:text="km/h"
+        android:textColor="@color/high_text_color"
+        android:textSize="@dimen/qb_px_16"
+        app:layout_constraintLeft_toRightOf="@+id/tvNoSpeed"
+        app:layout_constraintTop_toTopOf="@+id/noSpeedLeft" />
+</android.support.constraint.ConstraintLayout>

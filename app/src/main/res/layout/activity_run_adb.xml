@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/icon_bg"
+    tools:context=".domain.advance.RunAdbActivity">
+
+    <RelativeLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:padding="5dp"
+            android:src="@mipmap/icon_back" />
+
+        <TextView
+            android:id="@+id/topTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="adb指令运行"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/qb_px_28" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btPrompt"
+        android:layout_width="@dimen/qb_px_100"
+        android:layout_height="@dimen/qb_px_50"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginLeft="@dimen/qb_px_10"
+        android:background="@mipmap/icon_cancel"
+        android:text="提示"
+        android:textColor="@color/menu_text_color"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/etAdb"
+        app:layout_constraintTop_toBottomOf="@+id/topLayout" />
+
+    <EditText
+        android:id="@+id/etAdb"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:textColor="@color/menu_text_color"
+        app:layout_constraintLeft_toRightOf="@+id/btPrompt"
+        app:layout_constraintRight_toLeftOf="@+id/btExecute"
+        app:layout_constraintTop_toBottomOf="@+id/topLayout" />
+
+    <Button
+        android:id="@+id/btExecute"
+        android:layout_width="@dimen/qb_px_100"
+        android:layout_height="@dimen/qb_px_50"
+        android:layout_marginRight="@dimen/qb_px_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@mipmap/icon_cancel"
+        android:text="运行"
+        android:textColor="@color/menu_text_color"
+        app:layout_constraintLeft_toRightOf="@+id/etAdb"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topLayout" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etAdb">
+
+        <TextView
+            android:id="@+id/tvShow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColor="@color/menu_text_color" />
+
+    </ScrollView>
+
+
+</android.support.constraint.ConstraintLayout>

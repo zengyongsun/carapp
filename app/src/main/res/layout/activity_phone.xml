@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/icon_bg"
+    tools:context=".sip.PhoneActivity">
+
+
+    <ImageView
+        android:id="@+id/picBg"
+        android:layout_width="@dimen/qb_px_145"
+        android:layout_height="@dimen/qb_px_146"
+        android:layout_marginTop="@dimen/qb_px_80"
+        android:src="@mipmap/sip_pic_bg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivPic"
+        android:layout_width="@dimen/qb_px_130"
+        android:layout_height="@dimen/qb_px_131"
+        android:src="@mipmap/sip_pic"
+        app:layout_constraintBottom_toBottomOf="@+id/picBg"
+        app:layout_constraintLeft_toLeftOf="@+id/picBg"
+        app:layout_constraintRight_toRightOf="@+id/picBg"
+        app:layout_constraintTop_toTopOf="@+id/picBg" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_px_20"
+        android:text="调度员1"
+        android:textColor="@color/high_text_color"
+        android:textSize="@dimen/qb_px_54"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/picBg" />
+
+    <TextView
+        android:id="@+id/tvNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_px_20"
+        android:text="（1101）"
+        android:textColor="@color/high_text_color"
+        android:textSize="@dimen/qb_px_27"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+
+    <LinearLayout
+        android:id="@+id/hangupLayout"
+        android:layout_width="@dimen/qb_px_293"
+        android:layout_height="@dimen/qb_px_63"
+        android:layout_marginTop="@dimen/qb_px_70"
+        android:background="@drawable/select_sip_hangup_bt"
+        android:gravity="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/callStartLayout"
+        app:layout_constraintTop_toBottomOf="@+id/tvNumber">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/sip_hang_up"
+            android:textColor="@color/sip_hangup_color"
+            android:textSize="@dimen/qb_px_31" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/callStartLayout"
+        android:layout_width="@dimen/qb_px_293"
+        android:layout_height="@dimen/qb_px_63"
+        android:layout_marginTop="@dimen/qb_px_70"
+        android:background="@drawable/select_sip_answer_bt"
+        android:gravity="center"
+        app:layout_constraintLeft_toRightOf="@+id/hangupLayout"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNumber">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/sip_answer_desc"
+            android:textColor="@color/menu_text_select_color"
+            android:textSize="@dimen/qb_px_31" />
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>
