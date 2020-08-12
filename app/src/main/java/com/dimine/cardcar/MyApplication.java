@@ -1,11 +1,9 @@
 package com.dimine.cardcar;
 
 import android.app.Application;
-import android.content.Context;
 import android.os.Handler;
 import android.provider.Settings;
 import android.speech.tts.TextToSpeech;
-import android.support.multidex.MultiDex;
 import android.support.v7.app.AppCompatDelegate;
 import android.text.TextUtils;
 import android.widget.Toast;
@@ -59,12 +57,6 @@ public class MyApplication extends Application implements
     private boolean debug = true;
 
     @Override
-    protected void attachBaseContext(Context base) {
-        super.attachBaseContext(base);
-        MultiDex.install(this);
-    }
-
-    @Override
     public void onCreate() {
         super.onCreate();
         ObjectBox.init(this);
@@ -72,7 +64,7 @@ public class MyApplication extends Application implements
     }
 
     public void initApp() {
-        Bugly.init(getApplicationContext(), "3a18e6c210", false);
+        Bugly.init(getApplicationContext(), "3a18e6c210", true);
         initOkGo();
         LocalArguments.getInstance().init(this);
         setIdName();

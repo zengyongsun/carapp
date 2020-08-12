@@ -86,7 +86,6 @@
         app:layout_constraintVertical_chainStyle="packed">
 
         <ImageView
-            android:id="@+id/tvUser"
             android:layout_width="@dimen/qb_px_32"
             android:layout_height="@dimen/qb_px_25"
             android:layout_marginLeft="@dimen/qb_px_20"

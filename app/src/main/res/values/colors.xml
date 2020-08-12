@@ -11,8 +11,6 @@
 
     <color name="bg_white">#FFFFFF</color>
 
-    <color name="red">#ffff0000</color>
-
 
     <color name="menu_text_color">#0febff</color>
 
@@ -33,13 +31,9 @@
 
     <color name="loading_text_color">#ff3ec0f6</color>
 
-    <color name="sip_hangup_color">#ff3e3e</color>
-
     <color name="high_text_color">#ffffffff</color>
 
     <color name="medium_text_color">#ffbc42</color>
-
-    <color name="chan_text_complete">#57fe5c</color>
 
     <color name="voice_add_start_color">#feff90</color>
     <color name="voice_add_end_color">#ffbc42</color>
@@ -49,6 +43,4 @@
 
     <color name="modify_ip_color_bg">#ff020814</color>
 
-    <color name="color_v_bar_small">#43abff</color>
-    <color name="color_v_no_select">#1b3b8d</color>
 </resources>

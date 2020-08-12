@@ -50,15 +50,4 @@
     <!--底部button的样式 end-->
 
 
-    <style name="ShareDialog" parent="android:Theme.Dialog">
-        <item name="android:windowFrame">@null</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:background">@color/modify_ip_color_bg</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowIsFloating">true</item>
-        <item name="android:windowContentOverlay">@null</item>
-        <item name="android:backgroundDimAmount">0.7</item>
-    </style>
-
-
 </resources>

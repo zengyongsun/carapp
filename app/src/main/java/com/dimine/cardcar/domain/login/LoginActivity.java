@@ -16,6 +16,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,6 +36,7 @@ import com.dimine.cardcar.domain.mainactivity.MainActivity;
 import com.dimine.cardcar.domain.settings.SettingsActivity;
 import com.dimine.cardcar.implement.MyLocationListener;
 import com.dimine.cardcar.implement.MyTextWatcher;
+import com.dimine.cardcar.utils.DateFormatUtils;
 import com.dimine.cardcar.utils.GPSConversionUtil;
 import com.dimine.cardcar.utils.MyLog;
 import com.dimine.cardcar.utils.MyToast;
@@ -44,8 +46,6 @@ import com.dimine.cardcar.view.dialog.InputPwdDialog;
 import com.dimine.cardcar.view.dialog.LoadingDialog;
 
 import java.text.DecimalFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 import butterknife.BindView;
@@ -123,6 +123,28 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
                 mPresenter.selectUserInfo(userBean);
             }
         });
+    }
+
+    private final long time_interval = 2 * 1000;
+    private long last_out_time = 0;
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            exit();
+            return false;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    private void exit() {
+        long current_time = System.currentTimeMillis();
+        if (current_time - last_out_time < time_interval) {
+            finish();
+        } else {
+            last_out_time = current_time;
+            MyToast.showShort(this, "再按一次退出程序");
+        }
     }
 
     @Override
@@ -356,7 +378,6 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     }
 
     DecimalFormat df7 = new DecimalFormat("#.0000000");
-    SimpleDateFormat sdf = new SimpleDateFormat("yyMMdd HHmmss");
 
     private Location mLocation;
 
@@ -427,7 +448,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
         float speed = location.getSpeed() / 1.85f;
         //时间
         long time = location.getTime();
-        String[] endTime = sdf.format(new Date(time)).split(" ");
+        String[] endTime = DateFormatUtils.splitGpsTime(time);
         if (mPresenter != null) {
             mPresenter.onUpDate(new RMCBean(endTime[0], "A",
                     df7.format(GPSConversionUtil.mapCoordinateToDegrees(latitude + "")) + "",

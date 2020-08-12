@@ -88,4 +88,10 @@ public class DateFormatUtils {
         return false;
     }
 
+    public static SimpleDateFormat sdf = new SimpleDateFormat("yyMMdd HHmmss");
+
+    public static String[] splitGpsTime(long time) {
+        return sdf.format(new Date(time)).split(" ");
+    }
+
 }

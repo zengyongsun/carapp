@@ -151,7 +151,6 @@
         app:layout_constraintTop_toBottomOf="@+id/messageLayout">
 
         <TextView
-            android:id="@+id/tvPlanDesc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/qb_px_11"
@@ -173,7 +172,6 @@
             app:layout_constraintTop_toBottomOf="@+id/progressBar" />
 
         <TextView
-            android:id="@+id/tvCompleteDesc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/qb_px_11"

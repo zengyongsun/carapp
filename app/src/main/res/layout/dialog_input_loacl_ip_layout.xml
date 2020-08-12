@@ -144,7 +144,6 @@
         app:layout_constraintTop_toBottomOf="@+id/tvDescIp" />
 
     <LinearLayout
-        android:id="@+id/portLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@mipmap/icon_ip_short"
@@ -280,7 +279,6 @@
         app:layout_constraintTop_toBottomOf="@+id/tvDescMask" />
 
     <LinearLayout
-        android:id="@+id/gatewayLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginRight="@dimen/qb_px_80"
